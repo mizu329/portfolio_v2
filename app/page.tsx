@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -12,6 +13,7 @@ const barlowCondensed = Barlow_Condensed({
 export default function Home() {
   return (
     <>
+      <Header />
       <section className={styles.fv}>
         <div className={`inner ${styles.fv_content}}`}>
           <h1 className={`${styles.fv_title} ${barlowCondensed.className}`}>

@@ -1,0 +1,17 @@
+.header {
+  padding: 30px 50px;
+}
+
+.header_title {
+  font-size: 20px;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_content .nav > ul {
+  display: flex;
+  gap: 30px;
+}
