@@ -1,4 +1,44 @@
-.page {
+.fv .fv_content {
+  position: relative;
+}
+
+.fv .fv_title {
+  font-size: 100px;
+}
+
+.fv .fv_lead {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: absolute;
+  top: 100px;
+  left: 80%;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* concept */
+.concept_content {
+  display: flex;
+  gap: 15%;
+}
+
+/* aboutme */
+.aboutme_content {
+  display: flex;
+  gap: 15%;
+}
+
+/* service */
+.service_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.service_list li p {
+  margin-top: 30px;
+}
+
+/* .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
@@ -105,10 +145,10 @@ a.secondary {
 
 .footer img {
   flex-shrink: 0;
-}
+} */
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
@@ -164,4 +204,4 @@ a.secondary {
   .logo {
     filter: invert();
   }
-}
+} */
