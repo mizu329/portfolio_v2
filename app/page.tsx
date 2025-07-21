@@ -18,6 +18,17 @@ export default function Home() {
             <br />
             Mate
           </h1>
+          <video
+            className={styles.bgVideo}
+            width="640"
+            height="360"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/video/fv_movie.mp4" type="video/mp4" />
+          </video>
           <p className={styles.fv_subtitle}>
             WEB関連で気になったトピックをシェアしています。
           </p>
@@ -81,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`inner ${styles.Service}`}>
+      <section className={`inner ${styles.service}`}>
         <h2 className={`section_title ${barlowCondensed.className}`}>
           Service
         </h2>
