@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Barlow_Condensed } from "next/font/google";
+import Footer from "./components/Footer";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -10,7 +11,7 @@ const barlowCondensed = Barlow_Condensed({
 
 export default function Home() {
   return (
-    <main>
+    <>
       <section className={styles.fv}>
         <div className={`inner ${styles.fv_content}}`}>
           <h1 className={`${styles.fv_title} ${barlowCondensed.className}`}>
@@ -43,6 +44,18 @@ export default function Home() {
         <div>
           <h2>News</h2>
           <ul>
+            {/* {Date.contents.map((article) => (
+              <li key={article.id}>
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  width={300}
+                  height={200}
+                />
+                <h4>{article.title}</h4>
+                <p>{article.description}</p>
+              </li>
+            ))} */}
             <li>
               <Image></Image>
               <h4>タイトル</h4>
@@ -137,6 +150,8 @@ export default function Home() {
           </li>
         </ul>
       </section>
-    </main>
+
+      <Footer />
+    </>
   );
 }
