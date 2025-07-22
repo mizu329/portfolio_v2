@@ -5,12 +5,14 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header_content}>
-        <h1 className={styles.header_title}>Visionary Mate</h1>
+        <h1 className={styles.header_title}>
+          <Link href="/">Visionary Mate</Link>
+        </h1>
 
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link href="/">ニュース</Link>
+              <Link href="/news">ニュース</Link>
             </li>
             <li>
               <Link href="/">制作事例</Link>
