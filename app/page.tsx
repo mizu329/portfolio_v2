@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import NewsList from "./components/NewsList";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -14,8 +15,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section className={styles.fv}>
-        <div className={`inner ${styles.fv_content}}`}>
+      <section className={`inner ${styles.fv}`}>
+        <div className={styles.fv_content}>
           <h1 className={`${styles.fv_title} ${barlowCondensed.className}`}>
             Visionary
             <br />
@@ -42,30 +43,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div>
-          <h2>News</h2>
-          <ul>
-            {/* {Date.contents.map((article) => (
-              <li key={article.id}>
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  width={300}
-                  height={200}
-                />
-                <h4>{article.title}</h4>
-                <p>{article.description}</p>
-              </li>
-            ))} */}
-            <li>
-              <Image></Image>
-              <h4>タイトル</h4>
-              <p>タイトル</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <NewsList />
 
       <section className={`inner ${styles.concept}`}>
         <div className={styles.concept_content}>

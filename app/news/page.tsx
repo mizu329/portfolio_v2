@@ -2,6 +2,13 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Barlow_Condensed } from "next/font/google";
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // 必要なウェイトを指定
+  display: "swap",
+});
 
 const date = {
   contents: [
@@ -27,7 +34,9 @@ export default function Page() {
 
       <section className={styles.news}>
         <div className={`inner ${styles.news_content}`}>
-          <h2 className={styles.news_title}>News</h2>
+          <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
+            News
+          </h2>
           <ul className={styles.news_list}>
             {date.contents.map((article) => (
               <li key={article.id} className={styles.news_item}>
