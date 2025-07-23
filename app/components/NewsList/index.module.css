@@ -12,3 +12,11 @@
 .news_title {
   font-size: 60px;
 }
+
+.news_list {
+  margin-top: 30px;
+}
+
+.news_list li {
+  display: flex;
+}

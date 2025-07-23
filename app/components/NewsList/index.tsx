@@ -2,23 +2,14 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
+import Category from "../Category";
+import { News } from "../libs/microcms";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "600", "700"], // 必要なウェイトを指定
   display: "swap",
 });
-
-type News = {
-  id: string;
-  title: string;
-  description: string;
-  category: {
-    name: string;
-  };
-  publishedAt: string;
-  createdAt: string;
-};
 
 const date: { contents: News[] } = {
   contents: [
@@ -44,8 +35,8 @@ const date: { contents: News[] } = {
 export default function NewsList() {
   return (
     <>
-      <section className={styles.news}>
-        <div className={`inner ${styles.news_base}`}>
+      <section className={`inner ${styles.news}`}>
+        <div className={styles.news_base}>
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
             News
           </h2>
@@ -56,13 +47,22 @@ export default function NewsList() {
                   src="/image/news1.jpg"
                   alt={article.title}
                   className={styles.news_image}
-                  width={500}
-                  height={300}
+                  width={180}
+                  height={100}
                 />
-                <h4 className={styles.news_item_title}>{article.title}</h4>
-                <p className={styles.news_item_description}>
-                  {article.description}
-                </p>
+                <dl>
+                  <dt>
+                    <h3>{article.title}</h3>
+                  </dt>
+                  <dd>
+                    <span>
+                      <Category />
+                    </span>
+                  </dd>
+                  <dd>
+                    <span>{article.publishedAt}</span>
+                  </dd>
+                </dl>
               </li>
             ))}
           </ul>
