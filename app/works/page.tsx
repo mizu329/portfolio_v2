@@ -13,17 +13,13 @@ export default function page() {
   return (
     <>
       <Header />
-
-      <section className={styles.aboutme}>
-        <div className={`inner ${styles.aboutme_content}`}>
-          <h2
-            className={`${styles.aboutme_title} ${barlowCondensed.className}`}
-          >
-            About me
+      <section className={styles.works}>
+        <div className={`inner ${styles.works_content}`}>
+          <h2 className={`${styles.works_title} ${barlowCondensed.className}`}>
+            Works
           </h2>
         </div>
       </section>
-
       <p className={styles.text}>Coming soon...</p>
       <Footer />
     </>

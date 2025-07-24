@@ -15,16 +15,16 @@ export default function Header() {
               <Link href="/news">ニュース</Link>
             </li>
             <li>
-              <Link href="/">制作事例</Link>
+              <Link href="/works">制作事例</Link>
             </li>
             <li>
-              <Link href="/">事業内容</Link>
+              <Link href="/service">事業内容</Link>
             </li>
             <li>
-              <Link href="/">運営者情報</Link>
+              <Link href="/aboutme">運営者情報</Link>
             </li>
             <li>
-              <Link href="/">お問い合わせ</Link>
+              <Link href="/contact">お問い合わせ</Link>
             </li>
           </ul>
         </nav>
