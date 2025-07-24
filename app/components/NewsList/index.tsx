@@ -3,7 +3,9 @@ import styles from "./index.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
 import Category from "../Category";
-import { News } from "../libs/microcms";
+// import { News } from "../libs/microcms";
+import Date from "../Date";
+import ButtonLink from "../ButtonLink";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -60,12 +62,15 @@ export default function NewsList() {
                     </span>
                   </dd>
                   <dd>
-                    <span>{article.publishedAt}</span>
+                    <span>
+                      <Date />
+                    </span>
                   </dd>
                 </dl>
               </li>
             ))}
           </ul>
+          <ButtonLink href="/news">View more</ButtonLink>
         </div>
       </section>
     </>
