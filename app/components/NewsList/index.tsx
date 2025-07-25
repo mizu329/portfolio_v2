@@ -6,6 +6,18 @@ import Category from "../Category";
 // import { News } from "../libs/microcms";
 import Date from "../Date";
 import ButtonLink from "../ButtonLink";
+import { getNewsList } from "../../libs/microcms";
+
+type News = {
+  id: string;
+  title: string;
+  description: string;
+  category: {
+    name: string;
+  };
+  publishedAt: string;
+  createdAt: string;
+};
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -34,7 +46,8 @@ const date: { contents: News[] } = {
   ],
 };
 
-export default function NewsList() {
+export default async function NewsList() {
+  const date = await getNewsList();
   return (
     <>
       <section className={`inner ${styles.news}`}>
