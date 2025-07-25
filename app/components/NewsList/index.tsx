@@ -92,7 +92,7 @@ export default async function NewsList() {
                     </dd>
                     <dd>
                       <span>
-                        <Date date={article.date} />
+                        <Date date={article.publishedAt} />
                       </span>
                     </dd>
                   </dl>
