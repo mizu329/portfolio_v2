@@ -20,3 +20,7 @@
 .news_list li {
   display: flex;
 }
+
+.link {
+  display: flex;
+}
