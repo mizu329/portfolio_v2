@@ -3,22 +3,10 @@ import styles from "./index.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
 import Category from "../Category";
-// import { News } from "../libs/microcms";
 import Date from "../Date";
 import ButtonLink from "../ButtonLink";
 import { getNewsList } from "../../libs/microcms";
 import { TOP_NEWS_LIMIT } from "../../constants";
-
-type News = {
-  id: string;
-  title: string;
-  description: string;
-  category: {
-    name: string;
-  };
-  publishedAt: string;
-  createdAt: string;
-};
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],

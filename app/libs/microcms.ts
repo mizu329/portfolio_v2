@@ -5,8 +5,6 @@ import type {
   MicroCMSQueries,
   MicroCMSImage,
   MicroCMSListContent,
-  MicroCMSContentId,
-  MicroCMSDate,
 } from "microcms-js-sdk";
 
 // ニュース記事の型定義
@@ -19,7 +17,7 @@ export type News = {
   };
   publishedAt: string;
   createdAt: string;
-  image?: MicroCMSImage;
+  thumbnail?: MicroCMSImage;
   body?: string;
 } & MicroCMSListContent;
 
@@ -27,15 +25,6 @@ export type News = {
 export type Category = {
   name: string;
 };
-
-// microCMS の画像データ型
-interface MicroCMSImage {
-  url: string;
-  height?: number;
-  width?: number;
-}
-// microCMS のリストコンテンツ型
-type MicroCMSListContent = MicroCMSContentId & MicroCMSDate;
 
 // 環境変数が設定されていない場合はエラーをスローします
 if (!process.env.MICROCMS_API_KEY) {
