@@ -50,24 +50,29 @@ export default async function NewsList() {
           <ul className={styles.news_list}>
             {newsList.contents.map((article) => (
               <li key={article.id} className={styles.news_item}>
-                <Link href={`/news/${article.id}`} className={styles.link}>
-                  {article.thumbnail ? (
-                    <Image
-                      src={article.thumbnail.url}
-                      alt={article.title}
-                      className={styles.news_image}
-                      width={168}
-                      height={100}
-                    />
-                  ) : (
-                    <Image
-                      src="/image/noimage.jpg"
-                      alt="No Image"
-                      className={styles.news_image}
-                      width={168}
-                      height={100}
-                    />
-                  )}
+                <Link href={`/news/${article.id}`} className={styles.news_link}>
+                  <div className={styles.news_image}>
+                    {article.thumbnail ? (
+                      <Image
+                        src={article.thumbnail.url}
+                        alt={article.title}
+                        fill
+                        style={{ objectFit: "contain" }} // or "cover"
+                        sizes="(max-width: 768px) 100%, 768px"
+                      />
+                    ) : (
+                      <Image
+                        src="/image/noimage.jpg"
+                        alt="No Image"
+                        className={styles.news_image}
+                        fill
+                        style={{ objectFit: "contain" }} // or "cover"
+                        sizes="(max-width: 768px) 100%, 768px"
+                        // width={168}
+                        // height={100}
+                      />
+                    )}
+                  </div>
 
                   <dl>
                     <dt>
@@ -88,7 +93,9 @@ export default async function NewsList() {
               </li>
             ))}
           </ul>
-          <ButtonLink href="/news">View more</ButtonLink>
+          <div className={styles.news_button}>
+            <ButtonLink href="/news">View more</ButtonLink>
+          </div>
         </div>
       </section>
     </>

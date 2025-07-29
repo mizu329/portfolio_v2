@@ -11,11 +11,6 @@
   justify-content: space-between;
 }
 
-.header_content .nav > ul {
-  display: flex;
-  gap: 30px;
-}
-
 /* SP */
 @media (max-width: 767px) {
   .header {

@@ -21,6 +21,38 @@
   display: flex;
 }
 
-.link {
+.news_link {
   display: flex;
+}
+
+.news_image {
+  position: relative;
+  width: 168px;
+  height: 100px;
+}
+
+.news_button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+/* SP */
+@media (max-width: 767px) {
+  .news_base {
+    padding: 40px 45px;
+  }
+
+  .news_link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news_list li + li {
+    margin-top: 20px;
+  }
+
+  .news_image {
+    width: 100%;
+  }
 }
