@@ -1,44 +1,37 @@
 #btn03 {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
+  display: none !important; /* デフォルトでは非表示 */
+}
+
+.menu_nav ul {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  background: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 9999 !important; /* navより前面に */
-}
-
-#btn03 span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #000;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* アクティブ状態 */
-#btn03.active {
-  transform: rotate(360deg);
-}
-#btn03.active span:nth-of-type(1) {
-  transform: translateY(10px) rotate(-45deg);
-}
-#btn03.active span:nth-of-type(2) {
-  transform: translateY(-10px) rotate(45deg);
-}
-#btn03.active span:nth-of-type(3) {
-  opacity: 0;
+  gap: 20px;
 }
 
 /* スマホ用 */
 @media screen and (max-width: 767px) {
+  #btn03 span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* アクティブ状態 */
+  #btn03.active {
+    transform: rotate(360deg);
+  }
+  #btn03.active span:nth-of-type(1) {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  #btn03.active span:nth-of-type(2) {
+    transform: translateY(-10px) rotate(45deg);
+  }
+  #btn03.active span:nth-of-type(3) {
+    opacity: 0;
+  }
+
   .menu_nav {
     display: none;
   }
@@ -63,7 +56,18 @@
   }
 
   #btn03 {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     display: flex;
-    z-index: 9999 !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999 !important; /* navより前面に */
   }
 }

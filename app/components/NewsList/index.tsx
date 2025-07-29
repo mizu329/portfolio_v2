@@ -74,12 +74,12 @@ export default async function NewsList() {
                     )}
                   </div>
 
-                  <dl>
+                  <dl className={styles.news_wrapper}>
                     <dt>
                       <h3>{article.title}</h3>
                     </dt>
                     <dd>
-                      <span>
+                      <span className={styles.news_category}>
                         <Category category={article.category} />
                       </span>
                     </dd>

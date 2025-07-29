@@ -1,0 +1,12 @@
+.news_title {
+  text-align: center;
+  font-size: 65px;
+  margin-bottom: 100px;
+}
+
+.news_base {
+  background-color: #fff;
+  color: black;
+  padding: 80px;
+  border-radius: 10px;
+}

@@ -37,6 +37,18 @@
   margin-top: 25px;
 }
 
+.news_category {
+  background-color: var(--color-gray);
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.news_wrapper dd + dd {
+  margin-top: 5px;
+}
+
 /* SP */
 @media (max-width: 767px) {
   .news_base {
