@@ -7,8 +7,9 @@ import cx from "classnames";
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  //   const open = () => setIsOpen(true);
+  //   const close = () => setIsOpen(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <>
@@ -31,7 +32,7 @@ export default function Menu() {
           </li>
         </ul>
 
-        <button
+        {/* <button
           className={cx(styles.menu_button, isOpen && styles.close)}
           onClick={close}
           aria-label="メニューを開閉"
@@ -40,18 +41,19 @@ export default function Menu() {
           <span />
           <span />
           <p>閉じる</p>
-        </button>
+        </button> */}
       </nav>
 
       <button
-        className={styles.menu_button}
-        onClick={open}
+        id="btn03"
+        className={cx(styles.menu_button, isOpen && "active")}
+        onClick={toggleMenu}
         aria-label="メニューを開閉"
       >
         <span />
         <span />
         <span />
-        <p>メニュー</p>
+        <p>{isOpen ? "閉じる" : "メニュー"}</p>
       </button>
     </>
   );
