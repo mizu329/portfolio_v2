@@ -48,8 +48,6 @@ export default async function NewsList() {
                         fill
                         style={{ objectFit: "contain" }} // or "cover"
                         sizes="(max-width: 768px) 100%, 768px"
-                        // width={168}
-                        // height={100}
                       />
                     )}
                   </div>

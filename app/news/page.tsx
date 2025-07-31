@@ -51,13 +51,24 @@ export default async function Page({
             {newsDetail.contents.map((article) => (
               <li key={article.id} className={styles.news_item}>
                 <Link href={`/news/${article.id}`}>
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    className={styles.news_image}
-                    width={500}
-                    height={300}
-                  />
+                  {article.thumbnail ? (
+                    <Image
+                      src={article.thumbnail.url}
+                      alt={article.title}
+                      width={300}
+                      height={200}
+                      style={{ objectFit: "contain" }}
+                    />
+                  ) : (
+                    <Image
+                      src="/image/noimage.jpg"
+                      alt="No Image"
+                      className={styles.news_image}
+                      width={300}
+                      height={200}
+                      style={{ objectFit: "contain" }}
+                    />
+                  )}
                   <h4 className={styles.news_item_title}>{article.title}</h4>
                   <p className={styles.news_item_description}>
                     {article.description}
