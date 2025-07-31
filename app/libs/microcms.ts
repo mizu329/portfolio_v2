@@ -7,24 +7,23 @@ import type {
   MicroCMSListContent,
 } from "microcms-js-sdk";
 
+// カテゴリの型定義
+export type Category = {
+  id: string;
+  name: string;
+};
+
 // ニュース記事の型定義
 export type News = {
   id: string;
   title: string;
   description: string;
-  category: {
-    name: string;
-  };
+  categories: Category[] | undefined;
   publishedAt: string;
   createdAt: string;
   thumbnail?: MicroCMSImage;
   body?: string;
 } & MicroCMSListContent;
-
-// カテゴリの型定義
-export type Category = {
-  name: string;
-};
 
 // 環境変数が設定されていない場合はエラーをスローします
 if (!process.env.MICROCMS_API_KEY) {

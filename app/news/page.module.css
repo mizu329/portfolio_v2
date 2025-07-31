@@ -1,3 +1,9 @@
+.news_item > a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .news_title {
   text-align: center;
   font-size: 65px;
@@ -9,4 +15,23 @@
   color: black;
   border-radius: 10px;
   padding: 80px;
+}
+
+.news_image {
+  position: relative;
+  width: 168px;
+  height: 100px;
+}
+
+.news_category {
+  background-color: var(--color-gray);
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.news_wrapper dd + dd {
+  margin-top: 5px;
 }
