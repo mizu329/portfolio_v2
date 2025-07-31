@@ -3,6 +3,8 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Barlow_Condensed } from "next/font/google";
+import { getNewsDetail } from "../libs/microcms";
+import Link from "next/link";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -10,24 +12,32 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-const date = {
-  contents: [
-    {
-      id: 1,
-      title: "タイトル1",
-      description: "これはニュース記事の説明です。最新の情報をお届けします。",
-      image: "/image/news1.jpg",
-    },
-    {
-      id: 2,
-      title: "タイトル2",
-      description: "これはニュース記事の説明です。最新の情報をお届けします。",
-      image: "/image/news2.jpg",
-    },
-  ],
-};
+// const date = {
+//   contents: [
+//     {
+//       id: 1,
+//       title: "タイトル1",
+//       description: "これはニュース記事の説明です。最新の情報をお届けします。",
+//       image: "/image/news1.jpg",
+//     },
+//     {
+//       id: 2,
+//       title: "タイトル2",
+//       description: "これはニュース記事の説明です。最新の情報をお届けします。",
+//       image: "/image/news2.jpg",
+//     },
+//   ],
+// };
 
-export default function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  // microCMSから記事一覧を取得
+  const newsDetail = await getNewsDetail(slug, { limit: 10 });
+
   return (
     <>
       <Header />
@@ -38,19 +48,21 @@ export default function Page() {
             News
           </h2>
           <ul className={styles.news_list}>
-            {date.contents.map((article) => (
+            {newsDetail.contents.map((article) => (
               <li key={article.id} className={styles.news_item}>
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  className={styles.news_image}
-                  width={500}
-                  height={300}
-                />
-                <h4 className={styles.news_item_title}>{article.title}</h4>
-                <p className={styles.news_item_description}>
-                  {article.description}
-                </p>
+                <Link href={`/news/${article.id}`}>
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    className={styles.news_image}
+                    width={500}
+                    height={300}
+                  />
+                  <h4 className={styles.news_item_title}>{article.title}</h4>
+                  <p className={styles.news_item_description}>
+                    {article.description}
+                  </p>
+                </Link>
               </li>
             ))}
           </ul>

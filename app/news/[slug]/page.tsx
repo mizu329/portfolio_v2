@@ -37,7 +37,7 @@ export default async function Page({ params }: Props) {
             </p>
             <div dangerouslySetInnerHTML={{ __html: date.body || "" }} />
 
-            <div>
+            <div className={styles.news_button}>
               <ButtonLink href="/news">News一覧へ</ButtonLink>
             </div>
           </div>

@@ -1,8 +1,5 @@
 import styles from "./index.module.css";
-
-export type Category = {
-  name: string;
-};
+import type { Category } from "../../libs/microcms";
 
 type Props = {
   category?: Category;

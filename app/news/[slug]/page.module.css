@@ -10,3 +10,9 @@
   padding: 80px;
   border-radius: 10px;
 }
+
+.news_button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}

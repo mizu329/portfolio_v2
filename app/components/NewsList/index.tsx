@@ -14,31 +14,11 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-// const date: { contents: News[] } = {
-//   contents: [
-//     {
-//       id: "1",
-//       title: "タイトル1",
-//       description: "これはニュース記事の説明です。最新の情報をお届けします。",
-//       category: { name: "カテゴリー1" },
-//       publishedAt: "2023-10-01T00:00:00Z",
-//       createdAt: "2023-10-01T00:00:00Z",
-//     },
-//     {
-//       id: "2",
-//       title: "タイトル2",
-//       description: "これはニュース記事の説明です。最新の情報をお届けします。",
-//       category: { name: "カテゴリー2" },
-//       publishedAt: "2023-10-02T00:00:00Z",
-//       createdAt: "2023-10-02T00:00:00Z",
-//     },
-//   ],
-// };
-
 export default async function NewsList() {
   const newsList = await getNewsList({
     limit: TOP_NEWS_LIMIT,
   });
+  console.log(newsList);
 
   return (
     <>
