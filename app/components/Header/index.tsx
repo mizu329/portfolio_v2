@@ -2,7 +2,6 @@ import styles from "./index.module.css";
 import Link from "next/link";
 import { Barlow_Condensed } from "next/font/google";
 import Menu from "../Menu";
-import { Date } from "./components/Date";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],

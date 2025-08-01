@@ -1,5 +1,5 @@
-#btn03 {
-  display: none !important; /* デフォルトでは非表示 */
+.menu_button {
+  display: none; /* デフォルトでは非表示 */
 }
 
 .menu_nav ul {
@@ -9,7 +9,7 @@
 
 /* スマホ用 */
 @media screen and (max-width: 767px) {
-  #btn03 span {
+  .menu_button span {
     display: block;
     width: 100%;
     height: 3px;
@@ -19,16 +19,16 @@
   }
 
   /* アクティブ状態 */
-  #btn03.active {
+  .menu_button.active {
     transform: rotate(360deg);
   }
-  #btn03.active span:nth-of-type(1) {
+  .menu_button.active span:nth-of-type(1) {
     transform: translateY(10px) rotate(-45deg);
   }
-  #btn03.active span:nth-of-type(2) {
+  .menu_button.active span:nth-of-type(2) {
     transform: translateY(-10px) rotate(45deg);
   }
-  #btn03.active span:nth-of-type(3) {
+  .menu_button.active span:nth-of-type(3) {
     opacity: 0;
   }
 
@@ -55,7 +55,7 @@
     color: #fff;
   }
 
-  #btn03 {
+  .menu_button {
     position: fixed;
     top: 20px;
     right: 20px;
