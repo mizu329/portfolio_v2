@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import styles from "./page.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import ButtonLink from "../../components/ButtonLink";
+import Image from "next/image";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-  const date = await getNewsDetail(params.slug);
+  const article = await getNewsDetail(params.slug);
 
   return (
     <>
@@ -31,11 +32,31 @@ export default async function Page({ params }: Props) {
             News
           </h2>
           <div className={styles.news_base}>
-            <h1>{date.title}</h1>
+            <div className={styles.news_image}>
+              {article.thumbnail ? (
+                <Image
+                  src={article.thumbnail.url}
+                  alt={article.title}
+                  fill
+                  style={{ objectFit: "contain" }} // or "cover"
+                  sizes="(max-width: 768px) 100%, 768px"
+                />
+              ) : (
+                <Image
+                  src="/image/noimage.jpg"
+                  alt="No Image"
+                  className={styles.news_image}
+                  fill
+                  style={{ objectFit: "contain" }} // or "cover"
+                  sizes="(max-width: 768px) 100%, 768px"
+                />
+              )}
+            </div>
+            <h1>{article.title}</h1>
             <p>
-              <Date dateString={date.publishedAt} />
+              <Date dateString={article.publishedAt} />
             </p>
-            <div dangerouslySetInnerHTML={{ __html: date.body || "" }} />
+            <div dangerouslySetInnerHTML={{ __html: article.body || "" }} />
 
             <div className={styles.news_button}>
               <ButtonLink href="/news">News一覧へ</ButtonLink>

@@ -7,13 +7,13 @@ type Props = {
 
 export default function Category({ categories }: Props) {
   if (!categories || categories.length === 0) {
-    return <span className={styles.no_category}>未分類</span>;
+    return <span className={styles.category_label}>未分類</span>;
   }
   return (
     <>
       {categories.map((cat) => (
-        <span key={cat.id} className={styles.category}>
-          <span className={styles.category_name}>{cat.name}</span>
+        <span key={cat.id} className={styles.category_item}>
+          <span className={styles.category_label}>{cat.name}</span>
         </span>
       ))}
     </>

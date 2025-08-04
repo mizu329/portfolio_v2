@@ -1,0 +1,21 @@
+.category_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.category_label {
+  background-color: var(--color-gray);
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+/* SP */
+@media (max-width: 767px) {
+  .news_category {
+    display: flex;
+    flex-direction: column;
+  }
+}
