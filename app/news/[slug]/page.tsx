@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { Barlow_Condensed } from "next/font/google";
 import ButtonLink from "../../components/ButtonLink";
 import Image from "next/image";
+import Category from "../../components/Category";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -54,6 +55,9 @@ export default async function Page({ params }: Props) {
               )}
             </div>
             <h1>{article.title}</h1>
+            <span className={styles.news_category}>
+              <Category categories={article.categories} />
+            </span>
             <p>
               <Date date={article.publishedAt} />
             </p>

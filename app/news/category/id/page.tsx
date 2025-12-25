@@ -1,13 +1,13 @@
 import styles from "./page.module.css";
 import Image from "next/image";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import { Barlow_Condensed } from "next/font/google";
-import { getNewsList } from "../libs/microcms";
+import { getNewsList } from "../../../libs/microcms";
 import Link from "next/link";
-import Date from "../../Date";
-import Category from "../components/Category";
-import SearchField from "../components/SearchField";
+import Date from "../../../components/Date";
+import Category from "../../../components/Category";
+import SearchField from "../../../components/SearchField";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -34,13 +34,13 @@ export default async function Page() {
           <SearchField />
           <ul className={styles.news_list}>
             {newsList.contents.map((article) => (
-              <Link
-              href={`/news/category/${article.category.id}`}
-              className={styles.news_category_link}
-            >
-              <Category categories={article.categories} />
-            </Link>
               <li key={article.id} className={styles.news_item}>
+                {/* <Link
+                  href={`/news/category/${article.categories.id}`}
+                  className={styles.news_category_link}
+                >
+                  <Category categories={article.categories} />
+                </Link> */}
                 <Link href={`/news/${article.id}`}>
                   <div className={styles.news_image}>
                     {article.thumbnail ? (

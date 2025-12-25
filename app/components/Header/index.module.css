@@ -2,9 +2,8 @@
   padding: 30px 50px;
   width: 100%;
   position: sticky;
-  top: 100px;
+  top: 0px;
   z-index: 1000;
-  outline: 3px solid red;
 }
 
 .header_title {
