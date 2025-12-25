@@ -127,7 +127,7 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/GitHub.png"
+                    src="/image/Github.png"
                     alt="GitHub"
                     width={50}
                     height={0}
@@ -136,7 +136,7 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/WordPress.png"
+                    src="/image/Wordpress.png"
                     alt="WordPress"
                     width={50}
                     height={0}
@@ -145,7 +145,7 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/studio.png"
+                    src="/image/Studio.png"
                     alt="Studio"
                     width={50}
                     height={0}
