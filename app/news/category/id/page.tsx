@@ -1,12 +1,13 @@
+import styles from "./page.module.css";
 import Image from "next/image";
-import styles from "./index.module.css";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { Barlow_Condensed } from "next/font/google";
+import { getNewsList } from "../libs/microcms";
 import Link from "next/link";
-import Category from "../Category";
-import Date from "../Date";
-import ButtonLink from "../ButtonLink";
-import { getNewsList } from "../../libs/microcms";
-import { TOP_NEWS_LIMIT } from "../../constants";
+import Date from "../../Date";
+import Category from "../components/Category";
+import SearchField from "../components/SearchField";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -14,40 +15,51 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-export default async function NewsList() {
-  const newsList = await getNewsList({
-    limit: TOP_NEWS_LIMIT,
-  });
-  console.log(newsList);
+const limit = 10;
+
+export default async function Page() {
+  // microCMSから記事一覧を取得
+  const newsList = await getNewsList({ limit });
+  console.info("News List:", newsList);
 
   return (
     <>
-      <section className={`inner ${styles.news}`}>
-        <div className={styles.news_base}>
+      <Header />
+
+      <section className={styles.news}>
+        <div className={`inner ${styles.news_content}`}>
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
             News
           </h2>
+          <SearchField />
           <ul className={styles.news_list}>
             {newsList.contents.map((article) => (
+              <Link
+              href={`/news/category/${article.category.id}`}
+              className={styles.news_category_link}
+            >
+              <Category categories={article.categories} />
+            </Link>
               <li key={article.id} className={styles.news_item}>
-                <Link href={`/news/${article.id}`} className={styles.news_link}>
+                <Link href={`/news/${article.id}`}>
                   <div className={styles.news_image}>
                     {article.thumbnail ? (
                       <Image
                         src={article.thumbnail.url}
                         alt={article.title}
-                        fill
-                        style={{ objectFit: "contain" }} // or "cover"
-                        sizes="(max-width: 768px) 100%, 768px"
+                        className={styles.news_image}
+                        width={300}
+                        height={200}
+                        style={{ objectFit: "contain" }}
                       />
                     ) : (
                       <Image
                         src="/image/noimage.jpg"
                         alt="No Image"
                         className={styles.news_image}
-                        fill
-                        style={{ objectFit: "contain" }} // or "cover"
-                        sizes="(max-width: 768px) 100%, 768px"
+                        width={300}
+                        height={200}
+                        style={{ objectFit: "contain" }}
                       />
                     )}
                   </div>
@@ -71,11 +83,10 @@ export default async function NewsList() {
               </li>
             ))}
           </ul>
-          <div className={styles.news_button}>
-            <ButtonLink href="/news">View more</ButtonLink>
-          </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { getNewsList } from "../libs/microcms";
 import Link from "next/link";
 import Date from "../components/Date";
 import Category from "../components/Category";
+import SearchField from "../components/SearchField";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default async function Page() {
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
             News
           </h2>
+          <SearchField />
           <ul className={styles.news_list}>
             {newsList.contents.map((article) => (
               <li key={article.id} className={styles.news_item}>
