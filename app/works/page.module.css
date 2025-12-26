@@ -31,3 +31,21 @@
 .works__item-detail {
   margin: 0 5%;
 }
+
+/* スマホ用 */
+@media screen and (max-width: 767px) {
+  .news_list {
+    padding: 60px 35px;
+    .works_item > a {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column !important;
+    }
+    .works_item {
+      width: 70vw;
+      .works_image {
+        width: 70vw;
+      }
+    }
+  }
+}
