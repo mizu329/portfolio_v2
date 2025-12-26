@@ -7,5 +7,10 @@ type Props = {
 
 export default function Date({ date }: Props) {
   if (!date) return null;
-  return <span className={styles.date}>{formatDate(date)}</span>;
+
+  return (
+    <time dateTime={date} className={styles.date}>
+      {formatDate(date)}
+    </time>
+  );
 }

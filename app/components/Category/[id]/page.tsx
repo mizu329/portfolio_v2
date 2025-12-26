@@ -1,12 +1,11 @@
-import { getNewsDetail } from "../../libs/microcms";
-import Date from "../../components/Date";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import { getNewsDetail } from "../../../libs/microcms";
+import Date from "../../Date";
+import Header from "../../Header";
+import Footer from "../../Footer";
 import styles from "./page.module.css";
 import { Barlow_Condensed } from "next/font/google";
-import ButtonLink from "../../components/ButtonLink";
+import ButtonLink from "../../ButtonLink";
 import Image from "next/image";
-import Category from "../../components/Category";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -14,13 +13,11 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
-
-export default async function Page({ params }: Props) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const article = await getNewsDetail(slug);
 
@@ -55,9 +52,6 @@ export default async function Page({ params }: Props) {
               )}
             </div>
             <h1>{article.title}</h1>
-            <span className={styles.news_category}>
-              <Category categories={article.categories} />
-            </span>
             <p>
               <Date date={article.publishedAt} />
             </p>

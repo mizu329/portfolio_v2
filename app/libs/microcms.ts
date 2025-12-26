@@ -25,6 +25,18 @@ export type News = {
   body?: string;
 } & MicroCMSListContent;
 
+// 制作実績の型定義
+export type Works = {
+  title: string;
+  subtitle: string;
+  // categories: Category[] | undefined;
+  publishedAt: string;
+  createdAt: string;
+  workImage?: MicroCMSImage;
+  body?: string;
+  summary?: string;
+} & MicroCMSListContent;
+
 // 環境変数が設定されていない場合はエラーをスローします
 if (!process.env.MICROCMS_API_KEY) {
   throw new Error("MICROCMS_API_KEY is not defined");
@@ -60,4 +72,13 @@ export const getNewsDetail = async (
     queries,
   });
   return detailDate;
+};
+
+// 制作実績のリストを取得する関数
+export const getWorksList = async (queries?: MicroCMSQueries) => {
+  const listDate = await client.getList<Works>({
+    endpoint: "works",
+    queries,
+  });
+  return listDate;
 };
