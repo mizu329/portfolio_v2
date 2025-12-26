@@ -12,14 +12,9 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-
-  const workList = await getWorksList(slug);
+export default async function Page() {
+  // microCMSから記事一覧を取得
+  const workList = await getWorksList();
 
   return (
     <>
