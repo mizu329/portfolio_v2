@@ -39,3 +39,10 @@
   padding-bottom: 30px;
   border-top: #000 1px solid;
 }
+
+/* スマホ用 */
+@media screen and (max-width: 767px) {
+  .skills {
+    padding: 60px 35px;
+  }
+}
