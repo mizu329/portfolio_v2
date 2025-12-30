@@ -152,6 +152,15 @@ export default function page() {
                     style={{ height: "auto" }}
                   />
                 </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/angular.png"
+                    alt="Studio"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
               </dd>
             </dl>
             <dl className={styles.skill_section}>
