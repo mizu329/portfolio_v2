@@ -27,6 +27,7 @@ export type News = {
 
 // 制作実績の型定義
 export type Works = {
+  id: string;
   title: string;
   subtitle: string;
   // categories: Category[] | undefined;
@@ -81,4 +82,17 @@ export const getWorksList = async (queries?: MicroCMSQueries) => {
     queries,
   });
   return listDate;
+};
+
+// 制作実績の詳細を取得する関数
+export const getWorksDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailDate = await client.getListDetail<Works>({
+    endpoint: "works",
+    contentId,
+    queries,
+  });
+  return detailDate;
 };

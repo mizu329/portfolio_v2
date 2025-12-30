@@ -21,6 +21,12 @@
   padding: 80px;
 }
 
+.news_list {
+  li + li {
+    margin-top: 30px;
+  }
+}
+
 .news_image {
   width: 168px;
   height: 100px;
@@ -28,6 +34,11 @@
 
 .news_wrapper dd + dd {
   margin-top: 5px;
+}
+
+.news_wrapper dd > span {
+  display: flex;
+  gap: 15px;
 }
 
 @media screen and (max-width: 767px) {
