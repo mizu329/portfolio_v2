@@ -8,6 +8,11 @@
   margin-bottom: 100px;
 }
 
+.works__item-subtitle {
+  color: var(--color-gray2);
+  margin-top: 5px;
+}
+
 .works_base {
   background-color: #fff;
   color: black;
@@ -19,10 +24,18 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .works_button {
   display: flex;
   justify-content: flex-end;
   margin-top: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .works_base {
+    padding: 50px;
+  }
 }

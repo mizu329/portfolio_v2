@@ -1,7 +1,8 @@
-import { getWorksDetail } from "../../libs/microcms";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { getWorksDetail } from "../../libs/microcms";
 import { Barlow_Condensed } from "next/font/google";
 import ButtonLink from "../../components/ButtonLink";
 
@@ -30,8 +31,8 @@ export default async function Page({ params }: Props) {
             Works
           </h2>
           <div className={styles.works_base}>
-            <h3>{work.title}</h3>
-            <h4>{work.subtitle}</h4>
+            <h3 className={styles["works__item-title"]}>{work.title}</h3>
+            <h4 className={styles["works__item-subtitle"]}>{work.subtitle}</h4>
             <div className={styles.works_image}>
               {work.workImage ? (
                 <Image
@@ -59,6 +60,7 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
