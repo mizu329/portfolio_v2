@@ -1,34 +1,28 @@
-.news {
+.works {
   margin-top: 90px;
 }
 
-.news_title {
+.works_title {
   text-align: center;
   font-size: 65px;
   margin-bottom: 100px;
 }
 
-.news_base {
+.works_base {
   background-color: #fff;
   color: black;
-  padding: 80px;
   border-radius: 10px;
+  padding: 80px;
 }
 
-.news_image {
+.works_image {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
 }
 
-.news_button {
+.works_button {
   display: flex;
   justify-content: flex-end;
   margin-top: 25px;
-}
-
-@media screen and (max-width: 767px) {
-  .news_base {
-    padding: 50px;
-  }
 }

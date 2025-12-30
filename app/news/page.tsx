@@ -20,7 +20,6 @@ const limit = 10;
 export default async function Page() {
   // microCMSから記事一覧を取得
   const newsList = await getNewsList({ limit });
-  console.info("News List:", newsList);
 
   return (
     <>
