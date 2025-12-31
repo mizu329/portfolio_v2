@@ -4,6 +4,9 @@ import { Barlow_Condensed } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NewsList from "./components/NewsList";
+import { TOP_NEWS_LIMIT } from "./constants";
+import { getNewsList } from "./libs/microcms";
+import ButtonLink from "./components/ButtonLink";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -11,7 +14,8 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-export default function Home() {
+export default async function Home() {
+  const date = await getNewsList({ limit: TOP_NEWS_LIMIT });
   return (
     <>
       <Header />
@@ -44,7 +48,17 @@ export default function Home() {
           </div>
         </section>
 
-        <NewsList />
+        <section className={`inner ${styles.news}`}>
+          <div className={styles.news_base}>
+            <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
+              News
+            </h2>
+            <NewsList news={date.contents} />
+            <div className={styles.news_button}>
+              <ButtonLink href="/news">View more</ButtonLink>
+            </div>
+          </div>
+        </section>
 
         <section className={`inner ${styles.concept}`}>
           <div className={styles.concept_content}>

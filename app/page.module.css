@@ -32,6 +32,25 @@
   font-size: 25px;
 }
 
+/* news */
+.news_base {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 50px;
+  color: black;
+}
+
+.news_title {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.news_button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
 /* concept */
 .concept {
   padding-top: 150px;

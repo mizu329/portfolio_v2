@@ -24,7 +24,6 @@ export default async function Page() {
   return (
     <>
       <Header />
-
       <section className={styles.news}>
         <div className={`inner ${styles.news_content}`}>
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
@@ -78,7 +77,6 @@ export default async function Page() {
           </ul>
         </div>
       </section>
-
       <Footer />
     </>
   );

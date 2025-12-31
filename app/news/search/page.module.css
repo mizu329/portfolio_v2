@@ -1,0 +1,9 @@
+.news_base {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 50px;
+  color: black;
+}
+.news_list {
+  margin-top: 0 !important;
+}
