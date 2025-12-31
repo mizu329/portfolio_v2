@@ -29,21 +29,21 @@ export default async function Page({ searchParams }: Props) {
   return (
     <>
       <Header />
-      <section>
+      <section className={styles.news}>
         <div className={`inner ${styles.news_content}`}>
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
             News
           </h2>
+          <SearchField />
+          <div className={styles2.news_base}>
+            {news.length === 0 ? (
+              <p>検索結果がありません</p>
+            ) : (
+              <NewsList news={news} />
+            )}
+          </div>
         </div>
       </section>
-      <SearchField />
-      <div className={styles2.news_base}>
-        {news.length === 0 ? (
-          <p>検索結果がありません</p>
-        ) : (
-          <NewsList news={news} />
-        )}
-      </div>
 
       <Footer />
     </>
