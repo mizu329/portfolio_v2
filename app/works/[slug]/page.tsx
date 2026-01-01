@@ -53,7 +53,10 @@ export default async function Page({ params }: Props) {
                 />
               )}
             </div>
-            <div dangerouslySetInnerHTML={{ __html: work.body || "" }} />
+            <div
+              className={styles.body}
+              dangerouslySetInnerHTML={{ __html: work.body || "" }}
+            />
             <div className={styles.works_button}>
               <ButtonLink href="/works">Works一覧へ</ButtonLink>
             </div>
