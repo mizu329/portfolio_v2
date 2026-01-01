@@ -43,3 +43,8 @@
   gap: 20px;
   color: #ff191d;
 }
+.success {
+  padding: 20px;
+  background: var(--color-gray);
+  text-align: center;
+}
