@@ -1,16 +1,21 @@
 "use client";
 
 import { createContactDate } from "@/app/_actions/contact";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import styles from "./index.module.css";
 
-const initalState = {
+type FormState = {
+  status: "success" | "error" | "";
+  message: string;
+};
+
+const initialState: FormState = {
   status: "",
   message: "",
 };
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(createContactDate, initalState);
+  const [state, formAction] = useActionState(createContactDate, initialState);
   console.log(state);
   if (state.status === "success") {
     return (
@@ -23,6 +28,18 @@ export default function ContactForm() {
   }
   return (
     <form className={styles.form} action={formAction}>
+      <input
+        type="hidden"
+        name="hutk"
+        value={
+          typeof document !== "undefined"
+            ? document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("hubspotutk="))
+                ?.split("=")[1] ?? ""
+            : ""
+        }
+      />
       <div className={styles.item}>
         <label className={styles.label} htmlFor="name">
           お名前 <span className={styles.required}>*</span>
