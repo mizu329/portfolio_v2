@@ -1,5 +1,7 @@
 "use server";
 
+import { headers } from "next/headers";
+
 type FormState = {
   status: "success" | "error" | "";
   message: string;
@@ -14,12 +16,19 @@ export async function createContactDate(
   _prevState: FormState | null,
   formData: FormData
 ): Promise<FormState> {
+  const headersList = await headers();
+  const ip =
+    headersList.get("x-forwarded-for")?.split(",")[0] ??
+    headersList.get("x-real-ip") ??
+    "";
+
   const rawFormDate = {
     name: formData.get("name") as string,
     company: formData.get("company") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
     hutk: formData.get("hutk") as string,
+    ipAddress: ip,
   };
 
   if (!rawFormDate.name) {
