@@ -12,3 +12,22 @@
   font-size: 65px;
   margin-bottom: 100px;
 }
+
+.form_base {
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 80px;
+}
+
+.contact_description {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* スマホ用 */
+@media screen and (max-width: 767px) {
+  .form_base {
+    padding: 60px 35px;
+  }
+}
