@@ -1,16 +1,25 @@
 "use server";
 
+type FormState = {
+  status: "success" | "error" | "";
+  message: string;
+};
+
 function validateEmail(email: string) {
   const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return pattern.test(email);
 }
 
-export async function createContactDate(_prevState: any, formData: FormData) {
+export async function createContactDate(
+  _prevState: FormState | null,
+  formData: FormData
+): Promise<FormState> {
   const rawFormDate = {
     name: formData.get("name") as string,
     company: formData.get("company") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
+    hutk: formData.get("hutk") as string,
   };
 
   if (!rawFormDate.name) {
@@ -38,6 +47,32 @@ export async function createContactDate(_prevState: any, formData: FormData) {
     };
   }
 
+  const payload = {
+    fields: [
+      {
+        name: "fullname",
+        value: rawFormDate.name,
+      },
+      {
+        name: "company",
+        value: rawFormDate.company,
+      },
+      {
+        name: "email",
+        value: rawFormDate.email,
+      },
+      {
+        name: "message",
+        value: rawFormDate.message,
+      },
+    ],
+    context: {
+      hutk: rawFormDate.hutk,
+      pageUri: process.env.NEXT_PUBLIC_SITE_URL + "/contact",
+      pageName: "Contact",
+    },
+  };
+
   const result = await fetch(
     `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`,
     {
@@ -45,26 +80,7 @@ export async function createContactDate(_prevState: any, formData: FormData) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        fields: [
-          {
-            name: "fullname",
-            value: rawFormDate.name,
-          },
-          {
-            name: "company",
-            value: rawFormDate.company,
-          },
-          {
-            name: "email",
-            value: rawFormDate.email,
-          },
-          {
-            name: "message",
-            value: rawFormDate.message,
-          },
-        ],
-      }),
+      body: JSON.stringify(payload),
     }
   );
 
