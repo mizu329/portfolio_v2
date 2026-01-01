@@ -38,6 +38,46 @@ export async function createContactDate(_prevState: any, formData: FormData) {
     };
   }
 
+  const result = await fetch(
+    `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fields: [
+          {
+            name: "name",
+            value: rawFormDate.name,
+          },
+          {
+            name: "company",
+            value: rawFormDate.company,
+          },
+          {
+            name: "email",
+            value: rawFormDate.email,
+          },
+          {
+            name: "message",
+            value: rawFormDate.message,
+          },
+        ],
+      }),
+    }
+  );
+
+  try {
+    await result.json();
+  } catch (e) {
+    console.log(e);
+    return {
+      status: "error",
+      message:
+        "お問い合わせの送信に失敗しました。時間をおいて再度お試しください。",
+    };
+  }
   return {
     status: "success",
     message: "お問い合わせを送信しました。内容確認後、ご連絡致します。",
