@@ -48,7 +48,7 @@ export async function createContactDate(_prevState: any, formData: FormData) {
       body: JSON.stringify({
         fields: [
           {
-            name: "name",
+            name: "fullname",
             value: rawFormDate.name,
           },
           {
