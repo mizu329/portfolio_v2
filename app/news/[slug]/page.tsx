@@ -54,14 +54,17 @@ export default async function Page({ params }: Props) {
                 />
               )}
             </div>
-            <h1>{article.title}</h1>
+            <h1 className={styles.title}>{article.title}</h1>
             <span className={styles.news_category}>
               <Category categories={article.categories} />
             </span>
             <p>
               <Date date={article.publishedAt} />
             </p>
-            <div dangerouslySetInnerHTML={{ __html: article.body || "" }} />
+            <div
+              className={styles.body}
+              dangerouslySetInnerHTML={{ __html: article.body || "" }}
+            />
 
             <div className={styles.news_button}>
               <ButtonLink href="/news">News一覧へ</ButtonLink>
