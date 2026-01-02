@@ -18,6 +18,22 @@
   background-color: #fff;
   border-radius: 10px;
   padding: 80px;
+
+  .works_item {
+    border-bottom: 1px #000 solid;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .works_item:first-of-type {
+    padding-top: 0;
+  }
+
+  .works_item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
   .works_item > a {
     display: flex;
     align-items: center;
