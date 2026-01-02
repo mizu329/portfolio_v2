@@ -1,7 +1,7 @@
 .header {
   padding: 30px 50px;
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0px;
   z-index: 1000;
 }

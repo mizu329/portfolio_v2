@@ -19,7 +19,7 @@
 }
 
 .fv .fv_title {
-  font-size: 100px;
+  font-size: 120px;
 }
 
 .fv .fv_lead {
@@ -36,7 +36,7 @@
 .news_base {
   background-color: #fff;
   border-radius: 10px;
-  padding: 40px 50px;
+  padding: 80px;
   color: black;
 }
 
