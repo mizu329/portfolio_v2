@@ -39,7 +39,7 @@ export default async function Home() {
               <source src="/video/fv_movie.mp4" type="video/mp4" />
             </video>
             <p className={styles.fv_subtitle}>
-              WEB関連で気になったトピックをシェアしています。
+              WEB開発、アプリ開発に取り組んでいます。
             </p>
             <div className={styles.fv_lead}>
               <p>開発者体験・</p>
@@ -67,8 +67,10 @@ export default async function Home() {
                 Concept
               </h2>
               <h3>方針</h3>
-              <p>
-                デザイナー兼エンジニアとして、情報収集の一環として備忘録的に記録しています。
+              <p className={styles.concept_text}>
+                デザイナー兼エンジニアとして、日々の学びや気づきを整理し、アウトプットすることを目的としています。
+                <br />
+                実務や個人開発を通して得た知見を、記録として残しています。
               </p>
             </div>
 
@@ -94,7 +96,9 @@ export default async function Home() {
               </h2>
               <h3>私について</h3>
               <p>
-                デザイナー兼エンジニアとして、情報収集の一環として備忘録的に記録しています。
+                デザインとフロントエンド開発を軸に活動しています。
+                <br />
+                新しい技術や表現に触れながら、より良い体験づくりを追求しています。
               </p>
             </div>
           </div>
@@ -104,7 +108,7 @@ export default async function Home() {
           <h2 className={`section_title ${barlowCondensed.className}`}>
             Service
           </h2>
-          <h3>事業内容</h3>
+          <h3>できること</h3>
 
           <ul className={styles.service_list}>
             <li>
