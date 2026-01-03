@@ -12,3 +12,25 @@
   font-size: 65px;
   margin-bottom: 100px;
 }
+
+.service_base {
+  background-color: #fff;
+  padding: 80px;
+  border-radius: 10px;
+  color: #000;
+}
+
+.service_item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.service_item:last-of-type {
+  margin-bottom: 0;
+}
+
+.service__item-text {
+  display: flex;
+  align-items: center;
+}
