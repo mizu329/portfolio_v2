@@ -23,7 +23,7 @@ export default function Menu() {
             <Link href="/works">制作事例</Link>
           </li>
           <li>
-            <Link href="/service">事業内容</Link>
+            <Link href="/service">できること</Link>
           </li>
           <li>
             <Link href="/aboutme">運営者情報</Link>

@@ -59,6 +59,9 @@
 .concept_content {
   display: flex;
   gap: 15%;
+  p {
+    margin-top: 25px;
+  }
 }
 
 /* aboutme */
@@ -69,6 +72,9 @@
 .aboutme_content {
   display: flex;
   gap: 15%;
+  p {
+    margin-top: 25px;
+  }
 }
 
 /* service */
