@@ -101,6 +101,16 @@ export default async function Home() {
                 デザインとフロントエンド開発を軸に活動しています。
                 <br />
                 新しい技術や表現に触れながら、より良い体験づくりを追求しています。
+                <br />
+                <br />
+                Github:
+                <a
+                  href="https://github.com/mizu329"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://github.com/mizu329
+                </a>
               </p>
             </div>
           </div>

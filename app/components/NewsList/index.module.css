@@ -59,4 +59,9 @@
   .news_image {
     width: 100%;
   }
+
+  .news_wrapper dd > span {
+    flex-direction: column;
+    gap: 0px;
+  }
 }

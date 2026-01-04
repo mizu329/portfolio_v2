@@ -31,6 +31,11 @@ export default function page() {
                     alt="HP/LP制作"
                     width={300}
                     height={200}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
                   />
                   <p>HP/LP/アプリ制作</p>
                 </div>
@@ -48,6 +53,11 @@ export default function page() {
                     alt="バナー制作"
                     width={300}
                     height={200}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
                   />
                   <p>バナー制作</p>
                 </div>
@@ -64,6 +74,11 @@ export default function page() {
                     alt="UIUX改善"
                     width={300}
                     height={200}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
                   />
                   <p>UIUX改善</p>
                 </div>
@@ -81,6 +96,11 @@ export default function page() {
                     alt="保守運用管理"
                     width={300}
                     height={200}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
                   />
                   <p>保守運用管理</p>
                 </div>
