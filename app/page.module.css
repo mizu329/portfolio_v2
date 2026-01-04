@@ -110,16 +110,31 @@
     width: 100%;
   }
 
+  /* news */
+  .news_base {
+    padding: 60px 35px;
+  }
+
   /* concept */
   .concept_content {
     flex-direction: column;
     gap: 50px;
   }
 
+  .concept_content_right {
+    display: flex;
+    justify-content: center;
+  }
+
   /* aboutme */
   .aboutme_content {
     flex-direction: column-reverse;
     gap: 50px;
+  }
+
+  .aboutme_content_left {
+    display: flex;
+    justify-content: center;
   }
 
   /* service */
