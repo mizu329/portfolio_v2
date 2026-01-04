@@ -86,8 +86,10 @@ export default async function Home() {
               <Image
                 src="/image/photo of me.png"
                 alt=""
-                width={310}
-                height={350}
+                width={264}
+                height={298}
+                unoptimized
+                style={{ background: "transparent", objectFit: "contain" }}
               />
             </div>
             <div className={styles.aboutme_content_right}>

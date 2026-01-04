@@ -38,7 +38,7 @@ export default async function Page() {
                           className={styles.works_image}
                           width={300}
                           height={200}
-                          style={{ objectFit: "cover" }}
+                          style={{ objectFit: "contain" }}
                         />
                       ) : (
                         <Image
