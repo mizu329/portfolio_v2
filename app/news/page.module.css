@@ -61,4 +61,15 @@
   .news_list {
     padding: 50px;
   }
+
+  .news_category {
+    gap: 0 !important;
+    flex-direction: column;
+  }
+
+  .news_image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
