@@ -44,4 +44,10 @@
   .service_item {
     flex-direction: column;
   }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
