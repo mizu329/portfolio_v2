@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Visionary Mate",
     images: [
       {
-        url: "/images/ogp.png",
+        url: "/image/ogp.png",
         width: 1200,
         height: 630,
         alt: "Visionary Mate OGP",
@@ -43,9 +43,7 @@ export const metadata: Metadata = {
     title: "Visionary Mate",
     description:
       "デザイナー兼エンジニアとして、WEBサイト開発やアプリ開発を行っています。",
-    images: [
-      "https://visionary-mate.vercel.app/images/summary_large_image.png",
-    ],
+    images: ["https://visionary-mate.vercel.app/image/ogp.png"],
   },
   alternates: {
     canonical: "https://visionary-mate.vercel.app",
