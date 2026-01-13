@@ -3,6 +3,7 @@
 import { createContactDate } from "@/app/_actions/contact";
 import { useActionState } from "react";
 import styles from "./index.module.css";
+import { sendGAEvent } from "@next/third-parties/google";
 
 type FormState = {
   status: "success" | "error" | "";
@@ -17,6 +18,11 @@ const initialState: FormState = {
 export default function ContactForm() {
   const [state, formAction] = useActionState(createContactDate, initialState);
   console.log(state);
+
+  const handleSubmit = () => {
+    sendGAEvent({ event: "contact", value: "submit" });
+  };
+
   if (state.status === "success") {
     return (
       <p className={styles.success}>
@@ -27,7 +33,7 @@ export default function ContactForm() {
     );
   }
   return (
-    <form className={styles.form} action={formAction}>
+    <form className={styles.form} action={formAction} onSubmit={handleSubmit}>
       <input
         type="hidden"
         name="hutk"
