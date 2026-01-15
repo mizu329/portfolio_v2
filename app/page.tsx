@@ -105,11 +105,11 @@ export default async function Home() {
                 <br />
                 Github:
                 <a
-                  href="https://github.com/mizu329"
+                  href="https://github.com/miii329"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  https://github.com/mizu329
+                  https://github.com/miii329
                 </a>
               </p>
             </div>
