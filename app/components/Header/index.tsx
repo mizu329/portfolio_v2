@@ -16,7 +16,6 @@ export default function Header() {
         <h1 className={`${styles.header_title} ${barlowCondensed.className}`}>
           <Link href="/">Visionary Mate</Link>
         </h1>
-
         <Menu />
       </div>
     </header>

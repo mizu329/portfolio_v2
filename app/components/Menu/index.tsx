@@ -4,7 +4,8 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import { useState } from "react";
 import cx from "classnames";
-import Image from "next/image";
+import { MenuOpen } from "../icon/menu-open";
+import { MenuClose } from "../icon/menu-close";
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,17 +33,6 @@ export default function Menu() {
             <Link href="/contact">お問い合わせ</Link>
           </li>
         </ul>
-
-        {/* <button
-          className={cx(styles.menu_button, isOpen && styles.close)}
-          onClick={close}
-          aria-label="メニューを開閉"
-        >
-          <span />
-          <span />
-          <span />
-          <p>閉じる</p>
-        </button> */}
       </nav>
 
       <button
@@ -53,18 +43,16 @@ export default function Menu() {
       >
         <div>
           {isOpen ? (
-            <Image
-              src="/image/menu-close.svg"
-              alt="閉じる"
-              width={24}
-              height={24}
+            <MenuClose
+              size={24}
+              color="var(--color-gray)"
+              className="text-white hover:text-red-500 transition-colors"
             />
           ) : (
-            <Image
-              src="/image/menu-open.svg"
-              alt="メニュー"
-              width={24}
-              height={24}
+            <MenuOpen
+              size={24}
+              color="var(--color-gray)"
+              className="hover:text-red-500 transition-colors"
             />
           )}
         </div>
