@@ -55,7 +55,7 @@ export default async function Page({ params }: Props) {
               )}
             </div>
             <h1 className={styles.title}>{article.title}</h1>
-            <span className={styles.news_category}>
+            <span className={`flex-wrap gap-x-[15px] gap-y-0! ${styles.news_category}`}>
               <Category categories={article.categories} />
             </span>
             <p>

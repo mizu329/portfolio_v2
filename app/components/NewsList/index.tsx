@@ -42,7 +42,7 @@ export default async function NewsList({ news }: Props) {
                   <h3>{article.title}</h3>
                 </dt>
                 <dd>
-                  <span className={styles.news_category}>
+                  <span className={`flex flex-wrap gap-x-[15px] gap-y-0 ${styles.news_category}`}>
                     <Category categories={article.categories} />
                   </span>
                 </dd>

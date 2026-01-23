@@ -32,11 +32,6 @@
   margin-top: 5px;
 }
 
-.news_wrapper dd > span {
-  display: flex;
-  gap: 15px;
-}
-
 .news_category {
   color: black;
 }
@@ -58,10 +53,5 @@
 
   .news_image {
     width: 100%;
-  }
-
-  .news_wrapper dd > span {
-    flex-direction: column;
-    gap: 0px;
   }
 }

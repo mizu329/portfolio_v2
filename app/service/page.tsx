@@ -27,13 +27,13 @@ export default function page() {
               <li className={styles.service_item}>
                 <div className={styles["service__item-image"]}>
                   <Image
-                    className={styles.image}
+                    className={`md:max-w-none ${styles.image}`}
                     src="/image/HPLP.png"
                     alt="HP/LP制作"
                     width={300}
                     height={200}
                   />
-                  <p>HP/LP/アプリ制作</p>
+                  <p className="mt-2.5!">HP/LP/アプリ制作</p>
                 </div>
                 <div className={styles["service__item-text"]}>
                   <p>
@@ -45,13 +45,13 @@ export default function page() {
               <li className={styles.service_item}>
                 <div className={styles["service__item-image"]}>
                   <Image
-                    className={styles.image}
+                    className={`md:max-w-none ${styles.image}`}
                     src="/image/Banner.png"
                     alt="バナー制作"
                     width={300}
                     height={200}
                   />
-                  <p>バナー制作</p>
+                  <p className="mt-2.5!">バナー制作</p>
                 </div>
                 <div className={styles["service__item-text"]}>
                   <p>
@@ -62,13 +62,13 @@ export default function page() {
               <li className={styles.service_item}>
                 <div className={styles["service__item-image"]}>
                   <Image
-                    className={styles.image}
+                    className={`md:max-w-none ${styles.image}`}
                     src="/image/UIUX.png"
                     alt="UIUX改善"
                     width={300}
                     height={200}
                   />
-                  <p>UIUX改善</p>
+                  <p className="mt-2.5!">UIUX改善</p>
                 </div>
                 <div className={styles["service__item-text"]}>
                   <p>
@@ -80,13 +80,13 @@ export default function page() {
               <li className={styles.service_item}>
                 <div className={styles["service__item-image"]}>
                   <Image
-                    className={styles.image}
+                    className={`md:max-w-none ${styles.image}`}
                     src="/image/Maintenance.png"
                     alt="保守運用管理"
                     width={300}
                     height={200}
                   />
-                  <p>保守運用管理</p>
+                  <p className="mt-2.5!">保守運用管理</p>
                 </div>
                 <div className={styles["service__item-text"]}>
                   <p>

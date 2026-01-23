@@ -26,7 +26,9 @@ export default function page() {
           <div></div>
 
           <div className={styles.skills}>
-            <h3 className={barlowCondensed.className}>Skill</h3>
+            <h3 className={`text-[50px]! ${barlowCondensed.className}`}>
+              Skill
+            </h3>
             <dl className={styles.skill_section}>
               <dt className={barlowCondensed.className}>Design</dt>
               <dd>

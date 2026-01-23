@@ -55,6 +55,8 @@ export default function ContactForm() {
           type="text"
           id="name"
           name="name"
+          autoComplete="name"
+          placeholder="田中太郎"
           required
         />
       </div>
@@ -67,6 +69,7 @@ export default function ContactForm() {
           className={styles.textfield}
           type="text"
           id="company"
+          autoComplete="company"
           name="company"
         />
       </div>
@@ -80,6 +83,8 @@ export default function ContactForm() {
           type="text"
           id="email"
           name="email"
+          autoComplete="email"
+          placeholder="example@example.com"
           required
         />
       </div>
@@ -92,6 +97,8 @@ export default function ContactForm() {
           className={styles.textarea}
           id="message"
           name="message"
+          autoComplete="message"
+          placeholder="お問い合わせ内容をご記入ください。"
           required
         />
       </div>
