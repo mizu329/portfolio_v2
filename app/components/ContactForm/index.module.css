@@ -10,11 +10,15 @@
 }
 
 .textfield {
-  padding: 5px;
+  padding: 5px 10px;
+  border-width: 1px;
+  border-radius: 5px;
 }
 
 .textarea {
-  padding: 5px;
+  padding: 5px 10px;
+  border-width: 1px;
+  border-radius: 5px;
 }
 
 .required {

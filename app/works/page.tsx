@@ -35,7 +35,7 @@ export default async function Page() {
                         <Image
                           src={works.workImage.url}
                           alt={works.title}
-                          className={styles.works_image}
+                          className={`md:max-w-none h-50 ${styles.works_image}`}
                           width={300}
                           height={200}
                           style={{ objectFit: "contain" }}
@@ -44,7 +44,7 @@ export default async function Page() {
                         <Image
                           src="/image/noimage.jpg"
                           alt="No Image"
-                          className={styles.works_image}
+                          className={`md:max-w-none h-50 ${styles.works_image}`}
                           width={300}
                           height={200}
                           style={{ objectFit: "contain" }}

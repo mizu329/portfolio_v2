@@ -57,11 +57,5 @@
       align-items: flex-start;
       flex-direction: column !important;
     }
-    .works_item {
-      width: 70vw;
-      .works_image {
-        width: 70vw;
-      }
-    }
   }
 }
