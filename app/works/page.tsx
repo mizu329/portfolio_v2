@@ -28,7 +28,7 @@ export default async function Page() {
           <ul className={styles.news_list}>
             {workList.contents.map((works) => (
               <li key={works.id} className={styles.works_item}>
-                <Link href={`/works/${works.id}`}>
+                <Link className="md:gap-12.5" href={`/works/${works.id}`}>
                   <div className={styles["works__item-images"]}>
                     <div className={styles.works_image}>
                       {works.workImage ? (
@@ -54,8 +54,8 @@ export default async function Page() {
                   </div>
                   <div className={styles["works__item-detail"]}>
                     <h3>{works.title}</h3>
-                    <h4>{works.subtitle}</h4>
-                    <p>{works.summary}</p>
+                    <h4 className="text-(--color-gray2)">{works.subtitle}</h4>
+                    <p className="mt-2.5!">{works.summary}</p>
                   </div>
                 </Link>
               </li>

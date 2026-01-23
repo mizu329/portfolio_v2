@@ -61,7 +61,9 @@ export default async function Page() {
                       <h3>{article.title}</h3>
                     </dt>
                     <dd>
-                      <span className={`flex-wrap items-start md:items-center! gap-x-[15px] gap-y-0 ${styles.news_category}`}>
+                      <span
+                        className={`flex-wrap items-start md:items-center! gap-x-3.75 gap-y-0 ${styles.news_category}`}
+                      >
                         <Category categories={article.categories} />
                       </span>
                     </dd>
