@@ -23,8 +23,8 @@
 
 .news_button {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 25px;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .title {

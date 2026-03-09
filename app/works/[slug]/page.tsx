@@ -31,7 +31,7 @@ export default async function Page({ params }: Props) {
             Works
           </h2>
           <div className={styles.works_base}>
-            <h3 className={styles["works__item-title"]}>{work.title}</h3>
+            <h3 className="text-[24px]!">{work.title}</h3>
             <h4 className={styles["works__item-subtitle"]}>{work.subtitle}</h4>
             <div className={styles.works_image}>
               {work.workImage ? (
