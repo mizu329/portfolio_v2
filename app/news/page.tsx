@@ -31,7 +31,7 @@ export default async function Page() {
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
             News
           </h2>
-          <SearchField className="mb-[80px]!" />
+          <SearchField />
           </SlideIn>
           <SlideIn delay={0.8}>
             <ul className={styles.news_list}>
