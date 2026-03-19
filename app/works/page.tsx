@@ -28,11 +28,11 @@ export default async function Page() {
           </h2>
           </SlideIn>
 
-           <SlideIn delay={0.8}>
-          <ul className={styles.news_list}>
-            {workList.contents.map((works) => (
-              <li key={works.id} className={styles.works_item}>
-                <Link className="md:gap-12.5" href={`/works/${works.id}`}>
+          <SlideIn delay={0.8}>
+            <ul className={styles.news_list}>
+              {workList.contents.map((works, index) => (
+                <SlideIn as="li" key={works.id} className={styles.works_item} delay={1.2 + index * 0.1}>
+                  <Link className="md:gap-12.5" href={`/works/${works.id}`}>
                   <div className={styles["works__item-images"]}>
                     <div className={styles.works_image}>
                       {works.workImage ? (
@@ -62,10 +62,10 @@ export default async function Page() {
                     <p className="mt-2.5!">{works.summary}</p>
                   </div>
                 </Link>
-              </li>
+              </SlideIn>
             ))}  
-          </ul>
-           </SlideIn>
+            </ul>
+          </SlideIn>
         </div>
       </section>
       <Footer />

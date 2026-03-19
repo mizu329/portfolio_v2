@@ -7,11 +7,12 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   delay?: number; // アニメーションを遅らせる時間（秒）
+  as?: React.ElementType; // タグを自由に変更可能にする
 };
 
-export default function SlideIn({ children, className = "", delay = 0 }: Props) {
+export default function SlideIn({ children, className = "", delay = 0, as: Tag = "div" }: Props) {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<any>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,12 +43,12 @@ export default function SlideIn({ children, className = "", delay = 0 }: Props) 
   }, []);
 
   return (
-    <div
+    <Tag
       ref={ref}
       className={`${styles.slideIn} ${isVisible ? styles.visible : ""} ${className}`}
       style={{ transitionDelay: `${delay}s` }}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

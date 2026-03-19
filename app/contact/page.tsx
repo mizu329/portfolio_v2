@@ -26,14 +26,16 @@ export default function page() {
           </h2>
           </SlideIn>
           <SlideIn delay={0.8}>
-          <div className={styles.form_base}>
-            <p className={styles.contact_description}>
-              ご質問、ご相談は下記フォームよりお問い合わせください。
-              <br />
-              内容確認後、ご連絡致します。
-            </p>
-            <ContactForm />
-          </div>
+            <div className={styles.form_base}>
+              <SlideIn delay={1.2}>
+                <p className={styles.contact_description}>
+                  ご質問、ご相談は下記フォームよりお問い合わせください。
+                  <br />
+                  内容確認後、ご連絡致します。
+                </p>
+              </SlideIn>
+              <ContactForm />
+            </div>
           </SlideIn>
         </div>
       </section>

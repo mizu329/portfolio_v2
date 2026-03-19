@@ -34,10 +34,10 @@ export default async function Page() {
           <SearchField className="mb-[80px]!" />
           </SlideIn>
           <SlideIn delay={0.8}>
-          <ul className={styles.news_list}>
-            {newsList.contents.map((article) => (
-              <li key={article.id} className={styles.news_item}>
-                <Link href={`/news/${article.id}`}>
+            <ul className={styles.news_list}>
+              {newsList.contents.map((article, index) => (
+                <SlideIn as="li" key={article.id} className={styles.news_item} delay={1.2 + index * 0.1}>
+                  <Link href={`/news/${article.id}`}>
                   <div className={styles.news_image}>
                     {article.thumbnail ? (
                       <Image
@@ -78,9 +78,9 @@ export default async function Page() {
                     </dd>
                   </dl>
                 </Link>
-              </li>
+              </SlideIn>
             ))}
-          </ul>
+            </ul>
           </SlideIn>
         </div>
       </section>

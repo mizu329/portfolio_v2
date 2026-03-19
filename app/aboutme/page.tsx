@@ -26,19 +26,21 @@ export default function page() {
           </SlideIn>
 
           <SlideIn delay={0.8}>
-          <div className={styles.skills}>
-            <h3 className={`text-[50px]! ${barlowCondensed.className}`}>
-              Skill
-            </h3>
-            <p className="mb-[30px]!">以下、私のスキルセットです。</p>
-            <dl className={styles.skill_section}>
-              <dt className={barlowCondensed.className}>Design</dt>
+            <div className={styles.skills}>
+              <SlideIn delay={1.2}>
+                <h3 className={`text-[50px]! ${barlowCondensed.className}`}>
+                Skill
+              </h3>
+                  <p className="mb-[30px]!">以下、私のスキルセットです。</p>
+              </SlideIn>
+              <SlideIn as="dl" className={styles.skill_section} delay={1.3}>
+                <dt className={barlowCondensed.className}>Design</dt>
               <dd>
                 <span className={styles.icon}>
                   <Image
                     src="/image/Figma.png"
                     alt="Figma"
-                    width={50}
+                    width={40}
                     height={0}
                     style={{ height: "auto" }}
                   />
@@ -62,8 +64,8 @@ export default function page() {
                   />
                 </span>
               </dd>
-            </dl>
-            <dl className={styles.skill_section}>
+            </SlideIn>
+            <SlideIn as="dl" className={styles.skill_section} delay={1.4}>
               <dt className={barlowCondensed.className}>Development</dt>
               <dd>
                 <span className={styles.icon}>
@@ -193,8 +195,8 @@ export default function page() {
                   />
                 </span>
               </dd>
-            </dl>
-            <dl className={styles.skill_section}>
+            </SlideIn>
+            <SlideIn as="dl" className={styles.skill_section} delay={1.5}>
               <dt className={barlowCondensed.className}>Tool</dt>
               <dd>
                 <span className={styles.icon}>
@@ -225,7 +227,7 @@ export default function page() {
                   />
                 </span>
               </dd>
-            </dl>
+            </SlideIn>
           </div>
           </SlideIn>
         </div>

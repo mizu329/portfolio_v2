@@ -26,9 +26,9 @@ export default function page() {
           </SlideIn>
 
           <SlideIn delay={0.8}>
-          <div className={styles.service_base}>
-            <ul className={styles.service_list}>
-              <li className={styles.service_item}>
+            <div className={styles.service_base}>
+              <ul className={styles.service_list}>
+                <SlideIn as="li" className={styles.service_item} delay={1.2}>
                 <div className={styles["service__item-image"]}>
                   <Image
                     className={`md:max-w-none ${styles.image}`}
@@ -45,8 +45,8 @@ export default function page() {
                     アナリティクス導入やCRM連携など、マーケティングを意識した実装にも対応可能です。
                   </p>
                 </div>
-              </li>
-              <li className={styles.service_item}>
+              </SlideIn>
+              <SlideIn as="li" className={styles.service_item} delay={1.3}>
                 <div className={styles["service__item-image"]}>
                   <Image
                     className={`md:max-w-none ${styles.image}`}
@@ -62,8 +62,8 @@ export default function page() {
                     Webサイト・SNS・広告用のバナー制作を行っています。目的や訴求内容に合わせたデザインをご提案します。
                   </p>
                 </div>
-              </li>
-              <li className={styles.service_item}>
+              </SlideIn>
+              <SlideIn as="li" className={styles.service_item} delay={1.4}>
                 <div className={styles["service__item-image"]}>
                   <Image
                     className={`md:max-w-none ${styles.image}`}
@@ -80,8 +80,8 @@ export default function page() {
                     改善を行い、離脱防止やコンバージョン向上を目指します。
                   </p>
                 </div>
-              </li>
-              <li className={styles.service_item}>
+              </SlideIn>
+              <SlideIn as="li" className={styles.service_item} delay={1.5}>
                 <div className={styles["service__item-image"]}>
                   <Image
                     className={`md:max-w-none ${styles.image}`}
@@ -99,7 +99,7 @@ export default function page() {
                     継続的な保守・運用をご支援します。
                   </p>
                 </div>
-              </li>
+              </SlideIn>
             </ul>
           </div>
           </SlideIn>
