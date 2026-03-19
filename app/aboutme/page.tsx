@@ -29,6 +29,7 @@ export default function page() {
             <h3 className={`text-[50px]! ${barlowCondensed.className}`}>
               Skill
             </h3>
+            <p className="mb-[30px]!">以下、私のスキルセットです。</p>
             <dl className={styles.skill_section}>
               <dt className={barlowCondensed.className}>Design</dt>
               <dd>

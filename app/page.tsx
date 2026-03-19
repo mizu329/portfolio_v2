@@ -126,11 +126,11 @@ export default async function Home() {
             <li>
               <Image
                 src="/image/HPLP.png"
-                alt="HP/LP制作"
+                alt="HP/LP/アプリ制作"
                 width={300}
                 height={200}
               />
-              <p>HP/LP制作</p>
+              <p>HP/LP/アプリ制作</p>
             </li>
             <li>
               <Image

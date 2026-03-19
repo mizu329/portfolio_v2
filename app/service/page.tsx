@@ -90,7 +90,7 @@ export default function page() {
                 </div>
                 <div className={styles["service__item-text"]}>
                   <p>
-                    Next.js・microCMSを用いたサイトにおいて、
+                    サイトにおいて、
                     コンテンツ更新、ビルド・デプロイ管理、軽微な改修、表示確認など、
                     継続的な保守・運用をご支援します。
                   </p>
