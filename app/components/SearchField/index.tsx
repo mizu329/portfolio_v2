@@ -18,7 +18,7 @@ function SearchFieldComponent() {
     }
   };
   return (
-    <form onSubmit={handleSubmit} className={styles.form} action="">
+    <form onSubmit={handleSubmit} className={`${styles.form} mb-[80px]!`} action="">
       <label className={styles.search} htmlFor="">
         <Image
           src="/image/search.svg"

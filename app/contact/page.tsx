@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Barlow_Condensed } from "next/font/google";
 import ContactForm from "../components/ContactForm";
+import SlideIn from "../components/SlideIn";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -17,11 +18,14 @@ export default function page() {
 
       <section className={styles.contact}>
         <div className={`inner ${styles.contact_content}`}>
+          <SlideIn>
           <h2
             className={`${styles.contact_title} ${barlowCondensed.className}`}
           >
             Contact
           </h2>
+          </SlideIn>
+          <SlideIn delay={0.8}>
           <div className={styles.form_base}>
             <p className={styles.contact_description}>
               ご質問、ご相談は下記フォームよりお問い合わせください。
@@ -30,6 +34,7 @@ export default function page() {
             </p>
             <ContactForm />
           </div>
+          </SlideIn>
         </div>
       </section>
       <Footer />

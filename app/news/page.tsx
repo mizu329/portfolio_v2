@@ -8,6 +8,7 @@ import Link from "next/link";
 import Date from "../components/Date";
 import Category from "../components/Category";
 import SearchField from "../components/SearchField";
+import SlideIn from "../components/SlideIn";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -26,10 +27,13 @@ export default async function Page() {
       <Header />
       <section className={styles.news}>
         <div className={`inner ${styles.news_content}`}>
+          <SlideIn>
           <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
             News
           </h2>
-          <SearchField />
+          <SearchField className="mb-[80px]!" />
+          </SlideIn>
+          <SlideIn delay={0.8}>
           <ul className={styles.news_list}>
             {newsList.contents.map((article) => (
               <li key={article.id} className={styles.news_item}>
@@ -77,6 +81,7 @@ export default async function Page() {
               </li>
             ))}
           </ul>
+          </SlideIn>
         </div>
       </section>
       <Footer />

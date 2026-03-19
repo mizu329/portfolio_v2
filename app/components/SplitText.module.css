@@ -1,0 +1,29 @@
+.revealWrapper {
+  display: inline-flex; /* 空白文字（スペース）も正しく幅を確保するため */
+  overflow: hidden;
+  padding-bottom: 0.25em; /* 'y' など下に伸びる文字が切れないように */
+  margin-bottom: -0.25em;
+  vertical-align: bottom;
+}
+
+.revealTextLetter {
+  display: inline-block;
+  transform: translateX(-120%); /* 左側から右へスライド */
+  opacity: 0;
+  animation: revealSide 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes revealSide {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

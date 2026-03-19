@@ -5,6 +5,7 @@ import { Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { getWorksList } from "../libs/microcms";
+import SlideIn from "../components/SlideIn";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -21,10 +22,13 @@ export default async function Page() {
       <Header />
       <section className={styles.works}>
         <div className={`inner ${styles.works_content}`}>
+          <SlideIn>
           <h2 className={`${styles.works_title} ${barlowCondensed.className}`}>
             Works
           </h2>
+          </SlideIn>
 
+           <SlideIn delay={0.8}>
           <ul className={styles.news_list}>
             {workList.contents.map((works) => (
               <li key={works.id} className={styles.works_item}>
@@ -59,8 +63,9 @@ export default async function Page() {
                   </div>
                 </Link>
               </li>
-            ))}
+            ))}  
           </ul>
+           </SlideIn>
         </div>
       </section>
       <Footer />

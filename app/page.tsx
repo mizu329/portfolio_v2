@@ -7,6 +7,8 @@ import NewsList from "./components/NewsList";
 import { TOP_NEWS_LIMIT } from "./constants";
 import { getNewsList } from "./libs/microcms";
 import ButtonLink from "./components/ButtonLink";
+import SlideIn from "./components/SlideIn";
+import SplitText from "./components/SplitText";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -23,9 +25,9 @@ export default async function Home() {
         <section className={`inner ${styles.fv}`}>
           <div className={styles.fv_content}>
             <h1 className={`${styles.fv_title} ${barlowCondensed.className}`}>
-              Visionary
+              <SplitText text="Visionary" delayOffset={0.3} />
               <br />
-              Mate
+              <SplitText text="Mate" delayOffset={0.8} />
             </h1>
             <video
               className={styles.bgVideo}
@@ -49,18 +51,21 @@ export default async function Home() {
         </section>
 
         <section className={`inner ${styles.news}`}>
-          <div className={styles.news_base}>
-            <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
-              News
-            </h2>
-            <NewsList news={date.contents} />
-            <div className={styles.news_button}>
-              <ButtonLink href="/news">View more</ButtonLink>
+          <SlideIn>
+            <div className={styles.news_base}>
+              <h2 className={`${styles.news_title} ${barlowCondensed.className}`}>
+                News
+              </h2>
+              <NewsList news={date.contents} />
+              <div className={styles.news_button}>
+                <ButtonLink href="/news">View more</ButtonLink>
+              </div>
             </div>
-          </div>
+          </SlideIn>
         </section>
 
         <section className={`inner ${styles.concept}`}>
+          <SlideIn>
           <div className={styles.concept_content}>
             <div className={styles.concept_content_left}>
               <h2 className={`section_title ${barlowCondensed.className}`}>
@@ -78,9 +83,11 @@ export default async function Home() {
               <Image src="/image/design.png" alt="" width={240} height={240} />
             </div>
           </div>
+          </SlideIn>
         </section>
 
         <section className={`inner ${styles.aboutme}`}>
+          <SlideIn>
           <div className={styles.aboutme_content}>
             <div className={styles.aboutme_content_left}>
               <Image
@@ -114,9 +121,11 @@ export default async function Home() {
               </p>
             </div>
           </div>
+          </SlideIn>
         </section>
 
         <section className={`inner ${styles.service}`}>
+          <SlideIn>
           <h2 className={`section_title ${barlowCondensed.className}`}>
             Service
           </h2>
@@ -160,6 +169,7 @@ export default async function Home() {
               <p>保守運用管理</p>
             </li>
           </ul>
+          </SlideIn>
         </section>
       </div>
 

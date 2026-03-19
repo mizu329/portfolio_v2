@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Barlow_Condensed } from "next/font/google";
 import Image from "next/image";
+import SlideIn from "../components/SlideIn";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -14,14 +15,17 @@ export default function page() {
   return (
     <>
       <Header />
-
       <section className={styles.service}>
         <div className={`inner ${styles.service_content}`}>
+          <SlideIn>
           <h2
             className={`${styles.service_title} ${barlowCondensed.className}`}
           >
             Service
           </h2>
+          </SlideIn>
+
+          <SlideIn delay={0.8}>
           <div className={styles.service_base}>
             <ul className={styles.service_list}>
               <li className={styles.service_item}>
@@ -98,6 +102,7 @@ export default function page() {
               </li>
             </ul>
           </div>
+          </SlideIn>
         </div>
       </section>
 
