@@ -93,6 +93,33 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
+                    src="/image/nextjs.png"
+                    alt="Next.js"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/angular.png"
+                    alt="Angular"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/astro.png"
+                    alt="Astro"
+                    width={40}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
                     src="/image/php.png"
                     alt="PHP"
                     width={50}
@@ -102,17 +129,8 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/vercel.png"
-                    alt="Vercel"
-                    width={50}
-                    height={0}
-                    style={{ height: "auto" }}
-                  />
-                </span>
-                <span className={styles.icon}>
-                  <Image
-                    src="/image/nextjs.png"
-                    alt="Next.js"
+                    src="/image/ruby.png"
+                    alt="Ruby on Rails"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
@@ -129,8 +147,26 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/Github.png"
-                    alt="GitHub"
+                    src="/image/elephant.png"
+                    alt="PostgreSQL"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/neon.png"
+                    alt="Neon"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/vercel.png"
+                    alt="Vercel"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
@@ -147,17 +183,8 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/Studio.png"
-                    alt="Studio"
-                    width={50}
-                    height={0}
-                    style={{ height: "auto" }}
-                  />
-                </span>
-                <span className={styles.icon}>
-                  <Image
-                    src="/image/angular.png"
-                    alt="Studio"
+                    src="/image/microCMS.png"
+                    alt="microCMS"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
@@ -166,12 +193,30 @@ export default function page() {
               </dd>
             </dl>
             <dl className={styles.skill_section}>
-              <dt className={barlowCondensed.className}>Editor</dt>
+              <dt className={barlowCondensed.className}>Tool</dt>
               <dd>
                 <span className={styles.icon}>
                   <Image
                     src="/image/vscode.png"
                     alt="Visual Studio Code"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/docker.png"
+                    alt="Docker"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/Github.png"
+                    alt="GitHub"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
