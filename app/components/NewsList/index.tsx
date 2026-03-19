@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import Link from "next/link";
 import Category from "../Category";
+import SlideIn from "../SlideIn";
 import Date from "../Date";
 import { News } from "@/app/libs/microcms";
 
@@ -12,10 +13,11 @@ type Props = {
 export default async function NewsList({ news }: Props) {
   return (
     <>
-      <ul className={styles.news_list}>
-        {news.map((article) => (
-          <li key={article.id} className={styles.news_item}>
-            <Link href={`/news/${article.id}`} className={styles.news_link}>
+      <SlideIn delay={0.2}>
+        <ul className={styles.news_list}>
+          {news.map((article, index) => (
+            <SlideIn as="li" key={article.id} className={styles.news_item} delay={0.6 + index * 0.1}>
+              <Link href={`/news/${article.id}`} className={styles.news_link}>
               <div className={styles.news_image}>
                 {article.thumbnail ? (
                   <Image
@@ -53,9 +55,10 @@ export default async function NewsList({ news }: Props) {
                 </dd>
               </dl>
             </Link>
-          </li>
+          </SlideIn>
         ))}
-      </ul>
+        </ul>
+      </SlideIn>
     </>
   );
 }

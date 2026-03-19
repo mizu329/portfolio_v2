@@ -5,6 +5,7 @@ import { Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { getWorksList } from "../libs/microcms";
+import SlideIn from "../components/SlideIn";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -21,14 +22,17 @@ export default async function Page() {
       <Header />
       <section className={styles.works}>
         <div className={`inner ${styles.works_content}`}>
+          <SlideIn>
           <h2 className={`${styles.works_title} ${barlowCondensed.className}`}>
             Works
           </h2>
+          </SlideIn>
 
-          <ul className={styles.news_list}>
-            {workList.contents.map((works) => (
-              <li key={works.id} className={styles.works_item}>
-                <Link className="md:gap-12.5" href={`/works/${works.id}`}>
+          <SlideIn delay={0.8}>
+            <ul className={styles.news_list}>
+              {workList.contents.map((works, index) => (
+                <SlideIn as="li" key={works.id} className={styles.works_item} delay={1.2 + index * 0.1}>
+                  <Link className="md:gap-12.5" href={`/works/${works.id}`}>
                   <div className={styles["works__item-images"]}>
                     <div className={styles.works_image}>
                       {works.workImage ? (
@@ -58,9 +62,10 @@ export default async function Page() {
                     <p className="mt-2.5!">{works.summary}</p>
                   </div>
                 </Link>
-              </li>
-            ))}
-          </ul>
+              </SlideIn>
+            ))}  
+            </ul>
+          </SlideIn>
         </div>
       </section>
       <Footer />

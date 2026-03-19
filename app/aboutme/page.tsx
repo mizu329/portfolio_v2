@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Barlow_Condensed } from "next/font/google";
 import Image from "next/image";
+import SlideIn from "../components/SlideIn";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -14,29 +15,32 @@ export default function page() {
   return (
     <>
       <Header />
-
       <section className={styles.aboutme}>
         <div className={`inner ${styles.aboutme_content}`}>
+          <SlideIn>
           <h2
             className={`${styles.aboutme_title} ${barlowCondensed.className}`}
           >
             About me
           </h2>
+          </SlideIn>
 
-          <div></div>
-
-          <div className={styles.skills}>
-            <h3 className={`text-[50px]! ${barlowCondensed.className}`}>
-              Skill
-            </h3>
-            <dl className={styles.skill_section}>
-              <dt className={barlowCondensed.className}>Design</dt>
+          <SlideIn delay={0.8}>
+            <div className={styles.skills}>
+              <SlideIn delay={1.2}>
+                <h3 className={`text-[50px]! ${barlowCondensed.className}`}>
+                Skill
+              </h3>
+                  <p className="mb-[30px]!">以下、私のスキルセットです。</p>
+              </SlideIn>
+              <SlideIn as="dl" className={styles.skill_section} delay={1.3}>
+                <dt className={barlowCondensed.className}>Design</dt>
               <dd>
                 <span className={styles.icon}>
                   <Image
                     src="/image/Figma.png"
                     alt="Figma"
-                    width={50}
+                    width={40}
                     height={0}
                     style={{ height: "auto" }}
                   />
@@ -60,8 +64,8 @@ export default function page() {
                   />
                 </span>
               </dd>
-            </dl>
-            <dl className={styles.skill_section}>
+            </SlideIn>
+            <SlideIn as="dl" className={styles.skill_section} delay={1.4}>
               <dt className={barlowCondensed.className}>Development</dt>
               <dd>
                 <span className={styles.icon}>
@@ -93,6 +97,33 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
+                    src="/image/nextjs.png"
+                    alt="Next.js"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/angular.png"
+                    alt="Angular"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/astro.png"
+                    alt="Astro"
+                    width={40}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
                     src="/image/php.png"
                     alt="PHP"
                     width={50}
@@ -102,17 +133,8 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/vercel.png"
-                    alt="Vercel"
-                    width={50}
-                    height={0}
-                    style={{ height: "auto" }}
-                  />
-                </span>
-                <span className={styles.icon}>
-                  <Image
-                    src="/image/nextjs.png"
-                    alt="Next.js"
+                    src="/image/ruby.png"
+                    alt="Ruby on Rails"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
@@ -129,8 +151,26 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/Github.png"
-                    alt="GitHub"
+                    src="/image/elephant.png"
+                    alt="PostgreSQL"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/neon.png"
+                    alt="Neon"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/vercel.png"
+                    alt="Vercel"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
@@ -147,26 +187,17 @@ export default function page() {
                 </span>
                 <span className={styles.icon}>
                   <Image
-                    src="/image/Studio.png"
-                    alt="Studio"
-                    width={50}
-                    height={0}
-                    style={{ height: "auto" }}
-                  />
-                </span>
-                <span className={styles.icon}>
-                  <Image
-                    src="/image/angular.png"
-                    alt="Studio"
+                    src="/image/microCMS.png"
+                    alt="microCMS"
                     width={50}
                     height={0}
                     style={{ height: "auto" }}
                   />
                 </span>
               </dd>
-            </dl>
-            <dl className={styles.skill_section}>
-              <dt className={barlowCondensed.className}>Editor</dt>
+            </SlideIn>
+            <SlideIn as="dl" className={styles.skill_section} delay={1.5}>
+              <dt className={barlowCondensed.className}>Tool</dt>
               <dd>
                 <span className={styles.icon}>
                   <Image
@@ -177,9 +208,28 @@ export default function page() {
                     style={{ height: "auto" }}
                   />
                 </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/docker.png"
+                    alt="Docker"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
+                <span className={styles.icon}>
+                  <Image
+                    src="/image/Github.png"
+                    alt="GitHub"
+                    width={50}
+                    height={0}
+                    style={{ height: "auto" }}
+                  />
+                </span>
               </dd>
-            </dl>
+            </SlideIn>
           </div>
+          </SlideIn>
         </div>
       </section>
 

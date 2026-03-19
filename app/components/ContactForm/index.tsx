@@ -4,6 +4,7 @@ import { createContactDate } from "@/app/_actions/contact";
 import { useActionState } from "react";
 import styles from "./index.module.css";
 import { sendGAEvent } from "@next/third-parties/google";
+import SlideIn from "../SlideIn";
 
 type FormState = {
   status: "success" | "error" | "";
@@ -46,7 +47,7 @@ export default function ContactForm() {
             : ""
         }
       />
-      <div className={styles.item}>
+      <SlideIn className={styles.item} delay={1.3}>
         <label className={styles.label} htmlFor="name">
           お名前 <span className={styles.required}>*</span>
         </label>
@@ -59,9 +60,9 @@ export default function ContactForm() {
           placeholder="田中太郎"
           required
         />
-      </div>
+      </SlideIn>
 
-      <div className={styles.item}>
+      <SlideIn className={styles.item} delay={1.4}>
         <label className={styles.label} htmlFor="company">
           会社名
         </label>
@@ -72,9 +73,9 @@ export default function ContactForm() {
           autoComplete="company"
           name="company"
         />
-      </div>
+      </SlideIn>
 
-      <div className={styles.item}>
+      <SlideIn className={styles.item} delay={1.5}>
         <label className={styles.label} htmlFor="email">
           メールアドレス <span className={styles.required}>*</span>
         </label>
@@ -87,9 +88,9 @@ export default function ContactForm() {
           placeholder="example@example.com"
           required
         />
-      </div>
+      </SlideIn>
 
-      <div className={styles.item}>
+      <SlideIn className={styles.item} delay={1.6}>
         <label className={styles.label} htmlFor="message">
           お問い合わせ内容 <span className={styles.required}>*</span>
         </label>
@@ -101,14 +102,14 @@ export default function ContactForm() {
           placeholder="お問い合わせ内容をご記入ください。"
           required
         />
-      </div>
+      </SlideIn>
 
-      <div className={styles.action}>
+      <SlideIn className={styles.action} delay={1.7}>
         {state.status === "error" && (
           <p className={styles.error}>{state.message}</p>
         )}
         <input type="submit" value="送信する" className={styles.button} />
-      </div>
+      </SlideIn>
     </form>
   );
 }
