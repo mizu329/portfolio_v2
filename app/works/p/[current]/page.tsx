@@ -1,25 +1,42 @@
-import styles from "./page.module.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import styles from "../../page.module.css";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 import { Barlow_Condensed } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
-import { getWorksList } from "../libs/microcms";
-import SlideIn from "../components/SlideIn";
-import { NEWS_LIST_LIMIT } from "../constants";
-import Pagination from "../components/Pagination";
+import { getWorksList } from "@/app/libs/microcms";
+import SlideIn from "@/app/components/SlideIn";
+import { WORKS_LIST_LIMIT } from "@/app/constants";
+import Pagination from "@/app/components/Pagination";
+import { notFound } from "next/navigation";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["400", "600", "700"], // 必要なウェイトを指定
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
-export default async function Page() {
-  // microCMSから記事一覧を取得
+type Props = {
+    params: Promise<{
+        current: string;
+    }>;
+};
+
+export default async function Page({ params }: Props) {
+  const current = parseInt(await (await params).current, 10);
+
+  if (Number.isNaN(current) || current < 1) {
+    notFound();
+  }
+
   const workList = await getWorksList({
-    limit: NEWS_LIST_LIMIT,
+    limit: WORKS_LIST_LIMIT,
+    offset: (current - 1) * WORKS_LIST_LIMIT
   });
+
+  if (workList.contents.length === 0 && current > 1) {
+    notFound();
+  }
 
   return (
     <>
@@ -40,23 +57,9 @@ export default async function Page() {
                   <div className={styles["works__item-images"]}>
                     <div className={styles.works_image}>
                       {works.workImage ? (
-                        <Image
-                          src={works.workImage.url}
-                          alt={works.title}
-                          className={`md:max-w-none h-50 ${styles.works_image}`}
-                          width={300}
-                          height={200}
-                          style={{ objectFit: "contain" }}
-                        />
+                        <Image src={works.workImage.url} alt={works.title} className={`md:max-w-none h-50 ${styles.works_image}`} width={300} height={200} style={{ objectFit: "contain" }} />
                       ) : (
-                        <Image
-                          src="/image/noimage.jpg"
-                          alt="No Image"
-                          className={`md:max-w-none h-50 ${styles.works_image}`}
-                          width={300}
-                          height={200}
-                          style={{ objectFit: "contain" }}
-                        />
+                        <Image src="/image/noimage.jpg" alt="No Image" className={`md:max-w-none h-50 ${styles.works_image}`} width={300} height={200} style={{ objectFit: "contain" }} />
                       )}
                     </div>
                   </div>
@@ -68,9 +71,7 @@ export default async function Page() {
                 </Link>
               </SlideIn>
             ))}  
-
-            <Pagination totalCount={workList.totalCount} />
-            
+            <Pagination totalCount={workList.totalCount} current={current} />
             </ul>
           </SlideIn>
         </div>
