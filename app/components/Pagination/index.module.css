@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 60px auto 0;
+}
+
+.container li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border, #ccc);
+  color: var(--color-black, #333);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.container li a:hover {
+  background-color: var(--color-gray, #111);
+  color: #fff;
+  border-color: var(--color-gray, #111);
+}
+
+.current {
+  background-color: var(--color-black, #111);
+  color: #fff !important;
+  border-color: var(--color-black, #111);
+}
