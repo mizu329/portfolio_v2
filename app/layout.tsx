@@ -59,6 +59,26 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              objectFit: "cover",
+              zIndex: -10,
+            }}
+          >
+            <source src="/video/contact_movie.mp4" type="video/mp4" />
+          </video>
+        </div>
         {children}
       </body>
       <GoogleAnalytics gaId="G-5015YP6RV0" />
