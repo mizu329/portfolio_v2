@@ -1,3 +1,58 @@
+/* Contactボックス全体のホバーアニメーション */
+.contactBox {
+  position: relative;
+  overflow: hidden;
+}
+/* 斜めに背景色が変わるアニメーション */
+.contactBox {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.contactBox * {
+  position: relative;
+  z-index: 2;
+}
+.contactBox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(97, 89, 2, 0.75);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contactBox:hover::after {
+  transform: scaleX(1);
+}
+.contactBox:hover {
+  color: #fff !important;
+}
+
+/* Contactボタンのホバーアニメーション */
+.c-btn.slide.skew::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 140px;
+  background: rgba(0, 0, 0, 0.08);
+  transform: skewY(-10deg) scale(1, 0);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+.c-btn.slide.skew:hover::after {
+  transform: skewY(-10deg) scale(1, 1);
+}
 .fv {
   display: grid;
   align-items: center;
@@ -14,19 +69,26 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  z-index: -1; /* -99 は不要 */
+  z-index: 1;
   pointer-events: none; /* タップ阻害防止 */
 }
 
 .fv .fv_title {
   font-size: 120px;
+  position: relative;
+  z-index: 2;
+}
+
+.fv .fv_subtitle {
+  position: relative;
+  z-index: 2;
 }
 
 .fv .fv_lead {
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: absolute;
-  top: 35px;
+  top: -32px;
   left: 80%;
   font-weight: bold;
   font-size: 25px;
