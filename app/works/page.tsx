@@ -27,50 +27,56 @@ export default async function Page() {
       <section className={styles.works}>
         <div className={`inner ${styles.works_content}`}>
           <SlideIn>
-          <h2 className={`${styles.works_title} ${barlowCondensed.className}`}>
-            Works
-          </h2>
+            <h2
+              className={`${styles.works_title} ${barlowCondensed.className}`}
+            >
+              Works
+            </h2>
           </SlideIn>
 
           <SlideIn delay={0.8}>
             <ul className={styles.news_list}>
               {workList.contents.map((works, index) => (
-                <SlideIn as="li" key={works.id} className={styles.works_item} delay={1.2 + index * 0.1}>
+                <SlideIn
+                  as="li"
+                  key={works.id}
+                  className={styles.works_item}
+                  delay={1.2 + index * 0.1}
+                >
                   <Link className="md:gap-12.5" href={`/works/${works.id}`}>
-                  <div className={styles["works__item-images"]}>
-                    <div className={styles.works_image}>
-                      {works.workImage ? (
-                        <Image
-                          src={works.workImage.url}
-                          alt={works.title}
-                          className={`md:max-w-none h-50 ${styles.works_image}`}
-                          width={300}
-                          height={200}
-                          style={{ objectFit: "contain" }}
-                        />
-                      ) : (
-                        <Image
-                          src="/image/noimage.jpg"
-                          alt="No Image"
-                          className={`md:max-w-none h-50 ${styles.works_image}`}
-                          width={300}
-                          height={200}
-                          style={{ objectFit: "contain" }}
-                        />
-                      )}
+                    <div className={styles["works__item-images"]}>
+                      <div className={styles.works_image}>
+                        {works.workImage ? (
+                          <Image
+                            src={works.workImage.url}
+                            alt={works.title}
+                            className={`md:max-w-none h-50 ${styles.works_image}`}
+                            width={300}
+                            height={200}
+                            style={{ objectFit: "contain" }}
+                          />
+                        ) : (
+                          <Image
+                            src="/image/noimage.jpg"
+                            alt="No Image"
+                            className={`md:max-w-none h-50 ${styles.works_image}`}
+                            width={300}
+                            height={200}
+                            style={{ objectFit: "contain" }}
+                          />
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles["works__item-detail"]}>
-                    <h3>{works.title}</h3>
-                    <h4 className="text-(--color-gray2)">{works.subtitle}</h4>
-                    <p className="mt-2.5!">{works.summary}</p>
-                  </div>
-                </Link>
-              </SlideIn>
-            ))}  
+                    <div className={styles["works__item-detail"]}>
+                      <h3>{works.title}</h3>
+                      <h4 className="text-(--color-gray2)">{works.subtitle}</h4>
+                      <p className="mt-2.5!">{works.summary}</p>
+                    </div>
+                  </Link>
+                </SlideIn>
+              ))}
 
-            <Pagination totalCount={workList.totalCount} />
-            
+              <Pagination totalCount={workList.totalCount} />
             </ul>
           </SlideIn>
         </div>
