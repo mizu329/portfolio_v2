@@ -58,7 +58,7 @@ export default async function Home() {
         {/* </div> */}
 
         <div className="bg-black">
-          <section className={`inner ${styles.news}`}>
+          <section className={`inner pt-[160px]! ${styles.news}`}>
             <SlideIn>
               <div className={styles.news_base}>
                 <h2
