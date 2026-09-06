@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getNewsDetail } from "../../libs/microcms";
 import Date from "../../components/Date";
 import Header from "../../components/Header";
@@ -19,6 +20,41 @@ type Props = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await getNewsDetail(slug);
+  const imageUrl =
+    article.thumbnail?.url ?? "https://visionary-mate.vercel.app/image/ogp.png";
+  const description =
+    article.description ?? `${article.title} | Visionary Mate`;
+
+  return {
+    title: article.title,
+    description: description,
+    openGraph: {
+      title: article.title,
+      description: description,
+      url: `https://visionary-mate.vercel.app/news/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: article.thumbnail?.width ?? 1200,
+          height: article.thumbnail?.height ?? 630,
+          alt: article.title,
+        },
+      ],
+      locale: "ja_JP",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: description,
+      images: [imageUrl],
+    },
+  };
+}
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
@@ -54,8 +90,12 @@ export default async function Page({ params }: Props) {
                 />
               )}
             </div>
-            <h1 className={`${styles.title} text-[24px] mb-[10px]!`}>{article.title}</h1>
-            <span className={`flex-wrap gap-x-[15px] gap-y-0! ${styles.news_category}`}>
+            <h1 className={`${styles.title} text-[24px] mb-[10px]!`}>
+              {article.title}
+            </h1>
+            <span
+              className={`flex-wrap gap-x-[15px] gap-y-0! ${styles.news_category}`}
+            >
               <Category categories={article.categories} />
             </span>
             <p>
