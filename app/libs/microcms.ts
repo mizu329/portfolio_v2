@@ -55,33 +55,39 @@ const client = createClient({
 
 // ニュース記事のリストを取得する関数
 export const getNewsList = async (queries?: MicroCMSQueries) => {
-  const listDate = await client.getList<News>({
+  const listData = await client.getList<News>({
     endpoint: "news",
-    queries,
+    queries: {
+      ...queries,
+      orders: queries?.orders ?? "-publishedAt",
+    },
   });
-  return listDate;
+  return listData;
 };
 
-// ニュース記事のリストを取得する関数
+// ニュース記事の詳細を取得する関数
 export const getNewsDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
 ) => {
-  const detailDate = await client.getListDetail<News>({
+  const detailData = await client.getListDetail<News>({
     endpoint: "news",
     contentId,
     queries,
   });
-  return detailDate;
+  return detailData;
 };
 
 // 制作実績のリストを取得する関数
 export const getWorksList = async (queries?: MicroCMSQueries) => {
-  const listDate = await client.getList<Works>({
+  const listData = await client.getList<Works>({
     endpoint: "works",
-    queries,
+    queries: {
+      ...queries,
+      orders: queries?.orders ?? "-publishedAt",
+    },
   });
-  return listDate;
+  return listData;
 };
 
 // 制作実績の詳細を取得する関数
@@ -89,10 +95,10 @@ export const getWorksDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
 ) => {
-  const detailDate = await client.getListDetail<Works>({
+  const detailData = await client.getListDetail<Works>({
     endpoint: "works",
     contentId,
     queries,
   });
-  return detailDate;
+  return detailData;
 };
