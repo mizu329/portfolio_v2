@@ -75,7 +75,6 @@ export default async function Page() {
                   </Link>
                 </SlideIn>
               ))}
-
               <Pagination totalCount={workList.totalCount} />
             </ul>
           </SlideIn>

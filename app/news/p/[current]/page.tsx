@@ -1,15 +1,15 @@
-import styles from "./page.module.css";
+import styles from "../../page.module.css";
 import Image from "next/image";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 import { Barlow_Condensed } from "next/font/google";
-import { getNewsList } from "../libs/microcms";
+import { getNewsList } from "@/app/libs/microcms";
 import Link from "next/link";
-import Date from "../components/Date";
-import Category from "../components/Category";
-import SearchField from "../components/SearchField";
-import SlideIn from "../components/SlideIn";
-import Pagination from "../components/Pagination";
+import Date from "@/app/components/Date";
+import Category from "@/app/components/Category";
+import SearchField from "@/app/components/SearchField";
+import SlideIn from "@/app/components/SlideIn";
+import Pagination from "@/app/components/Pagination";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -19,9 +19,20 @@ const barlowCondensed = Barlow_Condensed({
 
 const limit = 10;
 
-export default async function Page() {
+type Props = {
+  params: Promise<{
+    current: string;
+  }>;
+};
+
+export default async function Page({ params }: Props) {
+  const current = parseInt((await params).current, 10);
+
   // microCMSから記事一覧を取得
-  const newsList = await getNewsList({ limit });
+  const newsList = await getNewsList({
+    limit,
+    offset: (current - 1) * limit,
+  });
 
   return (
     <>
@@ -81,7 +92,7 @@ export default async function Page() {
                 </Link>
               </SlideIn>
             ))}
-            <Pagination totalCount={newsList.totalCount} type="news" />
+            <Pagination totalCount={newsList.totalCount} current={current} type="news" />
             </ul>
           </SlideIn>
         </div>
